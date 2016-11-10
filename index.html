@@ -2,604 +2,287 @@
 <html>
 <head>
   <title>Sphere</title>
-  <style type="text/css">
-    .spheres--wrap {
-      position: relative;
-      width: 350px;
-      height: 350px;
-    }
-
-    .spheres--item {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      opacity: 0;
-    }
-
-    .spheres--active {
-      z-index: 3;
-      opacity: 1;
-    }
-
-    .spheres {
-      background-color: transparent;
-      background-image: url(ball.png);
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      border-radius: 100%;
-      height: 350px;
-      margin: 0 auto;
-      overflow: hidden;
-      position: relative;
-      width: 350px;
-      z-index: 99;
-    }
-
-    @keyframes itemNextIn {
-      0%   {left: -100%;}
-      100% {left: 0;}
-    }
-
-    @keyframes itemNextOut {
-      0%   {left: 0;}
-      100% {left: 100%;}
-    }
-
-    @keyframes itemPrevIn {
-      0%   {left: 100%;}
-      100% {left: 0;}
-    }
-
-    @keyframes itemPrevOut {
-      0%   {left: 0;}
-      100% {left: -100%;}
-    }
-
-    .item-prev--out {
-      animation: itemPrevOut .03s;
-    }
-
-    .item-prev--in {
-      animation: itemPrevIn .03s;
-    }
-
-    .item-next--out {
-      animation: itemNextOut .03s;
-    }
-
-    .item-next--in {
-      animation: itemNextIn .03s;
-    }
-
-    .row {
-      display: flex;
-    }
-
-    .row:first-of-type {
-    }
-
-    .item {
-      display: inline-block;
-      height: 50px;
-      line-height: 50px;
-      overflow: hidden;
-      position: relative;
-      text-align: center;
-      width: 50px;
-    }
-
-    .item:hover {
-      background-color: red;
-      box-shadow: 0 0 1px 0 #000 inset;
-      cursor: pointer;
-    }
-
-    .item:first-of-type {
-    }
-
-    .item img {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-    }
-
-    /* row 1 */
-    .row1 .item2 {
-      transform: translate(8px, 3px) scale3d(.5, .5, 1) perspective(250px) rotateX(-82deg) rotateY(35deg) rotateZ(40deg);
-    }
-
-    .row1 .item3 {
-      transform: translate(-8px, -10px) scale3d(1.8, .5, 1) perspective(250px) rotateX(-36deg) rotateY(50deg) rotateZ(2deg);
-      border-radius: 100% 0 0 0;
-    }
-
-    .row1 .item4 {
-      transform: translateY(-16px) perspective(250px) rotateX(62deg) scale(1.2, .8);
-      border-radius: 15% 15% 0 0;
-    }
-
-    .row1 .item5 {
-      transform: translate(8px, -10px) scale3d(1.8, .5, 1) perspective(250px) rotateX(-36deg) rotateY(-50deg) rotateZ(-2deg);
-      border-radius: 0 100% 0 0;
-    }
-
-    .row1 .item6 {
-      transform: translate(-8px, 3px) scale3d(.5, .5, 1) perspective(250px) rotateX(82deg) rotateY(35deg) rotateZ(40deg);
-    }
-
-    /* row 2 */
-    .row2 .item1 {
-      transform: translate(5px, 5px) scale3d(.5, .5, 1) perspective(200px) rotateX(76deg) rotateY(-59deg) rotateZ(48deg);
-    }
-
-    .row2 .item2 {
-      transform: translate(-18px, -15px) scale3d(1.3, 1.1, 1)  perspective(200px) rotateX(52deg) rotateY(-45deg) rotateZ(18deg);
-    }
-
-    .row2 .item3 {
-      transform: translate(-16px, -28px) scale3d(1.4, 1.1, 1)  perspective(200px) rotateX(36deg) rotateY(-30deg) rotateZ(8deg);
-    }
-
-    .row2 .item4 {
-      transform: translateY(-35px) perspective(250px) rotateX(36deg) scale( 1.35, 1.2);
-    }
-
-    .row2 .item5 {
-      transform: translate(16px, -28px) scale3d(1.4, 1.1, 1) perspective(200px) rotateX(36deg) rotateY(30deg) rotateZ(-8deg);
-    }
-
-    .row2 .item6 {
-      transform: translate(18px, -15px) scale3d(1.3, 1.1, 1)  perspective(200px) rotateX(52deg) rotateY(45deg) rotateZ(-18deg);
-    }
-
-    .row2 .item7 {
-      transform: translate(-5px, 5px) scale3d(.5, .5, 1) perspective(200px) rotateX(76deg) rotateY(59deg) rotateZ(-48deg);
-    }
-
-    /* row 3 */
-    .row3 .item1 {
-      transform: translate(-10px, -6px) scale3d(.5, 1.5, 1) perspective(250px) rotateX(56deg) rotateY(-36deg) rotateZ(33deg);
-      border-radius: 100% 0 0 0;
-    }
-
-    .row3 .item2 {
-      transform: translate(-28px, -15px) scale3d(1.2, 1.4, 1)  perspective(200px) rotateX(33deg) rotateY(-35deg) rotateZ(11deg);
-    }
-
-    .row3 .item3 {
-      transform: translate(-22px, -22px) scale3d(1.4, 1.4, 1)  perspective(200px) rotateX(20deg) rotateY(-20deg) rotateZ(4deg);
-    }
-
-    .row3 .item4 {
-      transform: translateY(-24px) perspective(400px) rotateX(22.5deg) scale(1.5);
-    }
-
-    .row3 .item5 {
-      transform: translate(22px, -22px) scale3d(1.4, 1.4, 1)  perspective(200px) rotateX(20deg) rotateY(20deg) rotateZ(-4deg);
-    }
-
-    .row3 .item6 {
-      transform: translate(29px, -15px) scale3d(1.2, 1.4, 1)  perspective(200px) rotateX(33deg) rotateY(35deg) rotateZ(-11deg);
-    }
-
-    .row3 .item7 {
-      transform: translate(10px, -6px) scale3d(.5, 1.5, 1) perspective(250px) rotateX(56deg) rotateY(36deg) rotateZ(-33deg);
-      border-radius: 0 100% 0 0;
-    }
-
-    /* row 4 */
-    .row4 .item1 {
-      transform: translateX(-16px) perspective(250px) rotateY(-67.5deg) scale(.8, 1.1);
-      border-radius: 15% 0 0 15%;
-    }
-
-    .row4 .item2 {
-      transform: translateX(-35px) perspective(250px) rotateY(-45deg) scale(1.35, 1.3);
-      z-index: 31;
-    }
-
-    .row4 .item3 {
-      transform: translateX(-24px) perspective(400px) rotateY(-22.5deg) scale(1.5);
-      z-index: 2;
-    }
-
-    .row4 .item4 {
-      transform: scale(1.57);
-      z-index: 3;
-    }
-
-    .row4 .item5 {
-      transform: translateX(24px) perspective(400px) rotateY(22.5deg) scale(1.5);
-      z-index: 2;
-    }
-
-    .row4 .item6 {
-      transform: translateX(35px) perspective(250px) rotateY(45deg) scale(1.35, 1.3);
-      z-index: 1;
-    }
-
-    .row4 .item7 {
-      transform: translateX(16px) perspective(250px) rotateY(67.5deg) scale(.8, 1.1);
-      border-radius: 0 15% 15% 0;
-    }
-
-
-    /* row 5 */
-    .row5 .item1 {
-      transform: translate(-12px, 5px) scale3d(.5, 1.5, 1) perspective(250px) rotateX(-56deg) rotateY(-36deg) rotateZ(-33deg);
-      border-radius: 0 0 0 100%;
-    }
-
-    .row5 .item2 {
-      transform: translate(-30px, 15px) scale3d(1.2, 1.4, 1)  perspective(200px) rotateX(-33deg) rotateY(-35deg) rotateZ(-11deg);
-    }
-
-    .row5 .item3 {
-      transform: translate(-22px, 22px) scale3d(1.4, 1.4, 1)  perspective(200px) rotateX(-20deg) rotateY(-20deg) rotateZ(-4deg);
-    }
-
-    .row5 .item4 {
-      transform: translateY(24px) perspective(400px) rotateX(-22.5deg) scale(1.5);
-    }
-
-    .row5 .item5 {
-      transform: translate(22px, 22px) scale3d(1.4, 1.4, 1)  perspective(200px) rotateX(-20deg) rotateY(20deg) rotateZ(4deg);
-    }
-    .row5 .item6 {
-      transform: translate(30px, 15px) scale3d(1.2, 1.4, 1)  perspective(200px) rotateX(-33deg) rotateY(35deg) rotateZ(11deg);
-    }
-
-    .row5 .item7 {
-      transform: translate(12px, 5px) scale3d(.5, 1.5, 1) perspective(250px) rotateX(-56deg) rotateY(36deg) rotateZ(33deg);
-      border-radius: 0 0 100% 0;
-    }
-
-    /* row 6 */
-    .row6 .item1 {
-      transform: translate(5px, -5px) scale3d(.5, .5, 1) perspective(200px) rotateX(-76deg) rotateY(-59deg) rotateZ(-48deg);
-    }
-
-    .row6 .item2 {
-      transform: translate(-18px, 15px) scale3d(1.3, 1.1, 1)  perspective(200px) rotateX(-52deg) rotateY(-45deg) rotateZ(-18deg);
-    }
-
-    .row6 .item3 {
-      transform: translate(-17px, 28px) scale3d(1.4, 1.1, 1) perspective(200px) rotateX(-36deg) rotateY(-30deg) rotateZ(-8deg);
-    }
-
-    .row6 .item4 {
-      transform: translateY(35px) perspective(250px) rotateX(-36deg) scale( 1.35, 1.2);
-    }
-
-    .row6 .item5 {
-      background-color: red;
-      transform: translate(17px, 28px) scale3d(1.4, 1.1, 1) perspective(200px) rotateX(-36deg) rotateY(30deg) rotateZ(8deg);
-    }
-
-    .row6 .item6 {
-      transform: translate(18px, 15px) scale3d(1.3, 1.1, 1)  perspective(200px) rotateX(-52deg) rotateY(45deg) rotateZ(18deg);
-    }
-
-    .row6 .item7 {
-      transform: translate(-5px, -5px) scale3d(.5, .5, 1) perspective(200px) rotateX(-76deg) rotateY(59deg) rotateZ(48deg);
-    }
-
-    /* row 7 */
-    .row7 .item2 {
-      transform: translate(8px, -3px) scale3d(.5, .5, 1) perspective(250px) rotateX(82deg) rotateY(35deg) rotateZ(-40deg);
-    }
-
-    .row7 .item3 {
-      transform: translate(-8px, 10px) scale3d(1.8, .5, 1) perspective(250px) rotateX(36deg) rotateY(50deg) rotateZ(2deg);
-      border-radius: 0 0 0 100%;
-    }
-
-    .row7 .item4 {
-      transform: translateY(16px) perspective(250px) rotateX(-62deg) scale(1.2, .8);
-      border-radius: 0 0 15% 15%;
-    }
-
-    .row7 .item5 {
-      transform: translate(8px, 10px) scale3d(1.8, .5, 1) perspective(250px) rotateX(36deg) rotateY(-50deg) rotateZ(2deg);
-      border-radius: 0 0 100% 0;
-    }
-
-    .row7 .item6 {
-      background-color: red;
-      transform: translate(-8px, -3px) scale3d(.5, .5, 1) perspective(250px) rotateX(-82deg) rotateY(35deg) rotateZ(-40deg);
-    }
-
-    .active-side {
-      display: none;
-    }
-
-  </style>
+  <link rel="stylesheet" href="sphere.css">
 </head>
 <body>
-  <div class="spheres--wrap">
-    <div class="spheres--item spheres--active" data-active='1'>
-      <div class="spheres">
-        <div class="row row1">
-          <span class="item item1"><img src="img/1.png"></span>
-          <span class="item item2"><img src="img/2.png"></span>
-          <span class="item item3"><img src="img/3.png"></span>
-          <span class="item item4"><img src="img/4.png"></span>
-          <span class="item item5"><img src="img/5.png"></span>
-          <span class="item item6"><img src="img/6.png"></span>
-          <span class="item item7"><img src="img/7.png"></span>
+  <div class="sphere--wrap">
+    <div class="sphere--item sphere--active" data-active='1'>
+      <div class="sphere">
+        <div class="sphere--row sphere--row-1">
+          <span class="item sphere--item-1"><img src="img/1.png"></span>
+          <span class="item sphere--item-2"><img src="img/2.png"></span>
+          <span class="item sphere--item-3"><img src="img/3.png"></span>
+          <span class="item sphere--item-4"><img src="img/4.png"></span>
+          <span class="item sphere--item-5"><img src="img/5.png"></span>
+          <span class="item sphere--item-6"><img src="img/6.png"></span>
+          <span class="item sphere--item-7"><img src="img/7.png"></span>
         </div>
-        <div class="row row2">
-          <span class="item item1"><img src="img/1.png"></span>
-          <span class="item item2"><img src="img/2.png"></span>
-          <span class="item item3"><img src="img/3.png"></span>
-          <span class="item item4"><img src="img/4.png"></span>
-          <span class="item item5"><img src="img/5.png"></span>
-          <span class="item item6"><img src="img/6.png"></span>
-          <span class="item item7"><img src="img/7.png"></span>
+        <div class="sphere--row sphere--row-2">
+          <span class="item sphere--item-1"><img src="img/1.png"></span>
+          <span class="item sphere--item-2"><img src="img/2.png"></span>
+          <span class="item sphere--item-3"><img src="img/3.png"></span>
+          <span class="item sphere--item-4"><img src="img/4.png"></span>
+          <span class="item sphere--item-5"><img src="img/5.png"></span>
+          <span class="item sphere--item-6"><img src="img/6.png"></span>
+          <span class="item sphere--item-7"><img src="img/7.png"></span>
         </div>
-        <div class="row row3">
-          <span class="item item1"><img src="img/1.png"></span>
-          <span class="item item2"><img src="img/2.png"></span>
-          <span class="item item3"><img src="img/3.png"></span>
-          <span class="item item4"><img src="img/4.png"></span>
-          <span class="item item5"><img src="img/5.png"></span>
-          <span class="item item6"><img src="img/6.png"></span>
-          <span class="item item7"><img src="img/7.png"></span>
+        <div class="sphere--row sphere--row-3">
+          <span class="item sphere--item-1"><img src="img/1.png"></span>
+          <span class="item sphere--item-2"><img src="img/2.png"></span>
+          <span class="item sphere--item-3"><img src="img/3.png"></span>
+          <span class="item sphere--item-4"><img src="img/4.png"></span>
+          <span class="item sphere--item-5"><img src="img/5.png"></span>
+          <span class="item sphere--item-6"><img src="img/6.png"></span>
+          <span class="item sphere--item-7"><img src="img/7.png"></span>
         </div>
-        <div class="row row4">
-          <span class="item item1"><img src="img/1.png"></span>
-          <span class="item item2"><img src="img/2.png"></span>
-          <span class="item item3"><img src="img/3.png"></span>
-          <span class="item item4"><img src="img/4.png"></span>
-          <span class="item item5"><img src="img/5.png"></span>
-          <span class="item item6"><img src="img/6.png"></span>
-          <span class="item item7"><img src="img/7.png"></span>
+        <div class="sphere--row sphere--row-4">
+          <span class="item sphere--item-1"><img src="img/1.png"></span>
+          <span class="item sphere--item-2"><img src="img/2.png"></span>
+          <span class="item sphere--item-3"><img src="img/3.png"></span>
+          <span class="item sphere--item-4"><img src="img/4.png"></span>
+          <span class="item sphere--item-5"><img src="img/5.png"></span>
+          <span class="item sphere--item-6"><img src="img/6.png"></span>
+          <span class="item sphere--item-7"><img src="img/7.png"></span>
         </div>
-        <div class="row row5">
-          <span class="item item1"><img src="img/1.png"></span>
-          <span class="item item2"><img src="img/2.png"></span>
-          <span class="item item3"><img src="img/3.png"></span>
-          <span class="item item4"><img src="img/4.png"></span>
-          <span class="item item5"><img src="img/5.png"></span>
-          <span class="item item6"><img src="img/6.png"></span>
-          <span class="item item7"><img src="img/7.png"></span>
+        <div class="sphere--row sphere--row-5">
+          <span class="item sphere--item-1"><img src="img/1.png"></span>
+          <span class="item sphere--item-2"><img src="img/2.png"></span>
+          <span class="item sphere--item-3"><img src="img/3.png"></span>
+          <span class="item sphere--item-4"><img src="img/4.png"></span>
+          <span class="item sphere--item-5"><img src="img/5.png"></span>
+          <span class="item sphere--item-6"><img src="img/6.png"></span>
+          <span class="item sphere--item-7"><img src="img/7.png"></span>
         </div>
-        <div class="row row6">
-          <span class="item item1"><img src="img/1.png"></span>
-          <span class="item item2"><img src="img/2.png"></span>
-          <span class="item item3"><img src="img/3.png"></span>
-          <span class="item item4"><img src="img/4.png"></span>
-          <span class="item item5"><img src="img/5.png"></span>
-          <span class="item item6"><img src="img/6.png"></span>
-          <span class="item item7"><img src="img/7.png"></span>
+        <div class="sphere--row sphere--row-6">
+          <span class="item sphere--item-1"><img src="img/1.png"></span>
+          <span class="item sphere--item-2"><img src="img/2.png"></span>
+          <span class="item sphere--item-3"><img src="img/3.png"></span>
+          <span class="item sphere--item-4"><img src="img/4.png"></span>
+          <span class="item sphere--item-5"><img src="img/5.png"></span>
+          <span class="item sphere--item-6"><img src="img/6.png"></span>
+          <span class="item sphere--item-7"><img src="img/7.png"></span>
         </div>
-        <div class="row row7">
-          <span class="item item1"><img src="img/1.png"></span>
-          <span class="item item2"><img src="img/2.png"></span>
-          <span class="item item3"><img src="img/3.png"></span>
-          <span class="item item4"><img src="img/4.png"></span>
-          <span class="item item5"><img src="img/5.png"></span>
-          <span class="item item6"><img src="img/6.png"></span>
-          <span class="item item7"><img src="img/7.png"></span>
-        </div>
-      </div>
-    </div>
-    <div class="spheres--item spheres--item-1">
-      <div class="spheres">
-        <div class="row row1">
-          <span class="item item1"><img src="img/1.png"></span>
-          <span class="item item2"><img src="img/2.png"></span>
-          <span class="item item3"><img src="img/3.png"></span>
-          <span class="item item4"><img src="img/4.png"></span>
-          <span class="item item5"><img src="img/5.png"></span>
-          <span class="item item6"><img src="img/6.png"></span>
-          <span class="item item7"><img src="img/7.png"></span>
-        </div>
-        <div class="row row2">
-          <span class="item item1"><img src="img/1.png"></span>
-          <span class="item item2"><img src="img/2.png"></span>
-          <span class="item item3"><img src="img/3.png"></span>
-          <span class="item item4"><img src="img/4.png"></span>
-          <span class="item item5"><img src="img/5.png"></span>
-          <span class="item item6"><img src="img/6.png"></span>
-          <span class="item item7"><img src="img/7.png"></span>
-        </div>
-        <div class="row row3">
-          <span class="item item1"><img src="img/1.png"></span>
-          <span class="item item2"><img src="img/2.png"></span>
-          <span class="item item3"><img src="img/3.png"></span>
-          <span class="item item4"><img src="img/4.png"></span>
-          <span class="item item5"><img src="img/5.png"></span>
-          <span class="item item6"><img src="img/6.png"></span>
-          <span class="item item7"><img src="img/7.png"></span>
-        </div>
-        <div class="row row4">
-          <span class="item item1"><img src="img/1.png"></span>
-          <span class="item item2"><img src="img/2.png"></span>
-          <span class="item item3"><img src="img/3.png"></span>
-          <span class="item item4"><img src="img/4.png"></span>
-          <span class="item item5"><img src="img/5.png"></span>
-          <span class="item item6"><img src="img/6.png"></span>
-          <span class="item item7"><img src="img/7.png"></span>
-        </div>
-        <div class="row row5">
-          <span class="item item1"><img src="img/1.png"></span>
-          <span class="item item2"><img src="img/2.png"></span>
-          <span class="item item3"><img src="img/3.png"></span>
-          <span class="item item4"><img src="img/4.png"></span>
-          <span class="item item5"><img src="img/5.png"></span>
-          <span class="item item6"><img src="img/6.png"></span>
-          <span class="item item7"><img src="img/7.png"></span>
-        </div>
-        <div class="row row6">
-          <span class="item item1"><img src="img/1.png"></span>
-          <span class="item item2"><img src="img/2.png"></span>
-          <span class="item item3"><img src="img/3.png"></span>
-          <span class="item item4"><img src="img/4.png"></span>
-          <span class="item item5"><img src="img/5.png"></span>
-          <span class="item item6"><img src="img/6.png"></span>
-          <span class="item item7"><img src="img/7.png"></span>
-        </div>
-        <div class="row row7">
-          <span class="item item1"><img src="img/1.png"></span>
-          <span class="item item2"><img src="img/2.png"></span>
-          <span class="item item3"><img src="img/3.png"></span>
-          <span class="item item4"><img src="img/4.png"></span>
-          <span class="item item5"><img src="img/5.png"></span>
-          <span class="item item6"><img src="img/6.png"></span>
-          <span class="item item7"><img src="img/7.png"></span>
+        <div class="sphere--row sphere--row-7">
+          <span class="item sphere--item-1"><img src="img/1.png"></span>
+          <span class="item sphere--item-2"><img src="img/2.png"></span>
+          <span class="item sphere--item-3"><img src="img/3.png"></span>
+          <span class="item sphere--item-4"><img src="img/4.png"></span>
+          <span class="item sphere--item-5"><img src="img/5.png"></span>
+          <span class="item sphere--item-6"><img src="img/6.png"></span>
+          <span class="item sphere--item-7"><img src="img/7.png"></span>
         </div>
       </div>
     </div>
-    <div class="spheres--item spheres--item-2">
-      <div class="spheres">
-        <div class="row row1">
-          <span class="item item1"><img src="img/1-1.png"></span>
-          <span class="item item2"><img src="img/2-1.png"></span>
-          <span class="item item3"><img src="img/3-1.png"></span>
-          <span class="item item4"><img src="img/4-1.png"></span>
-          <span class="item item5"><img src="img/5-1.png"></span>
-          <span class="item item6"><img src="img/6-1.png"></span>
-          <span class="item item7"><img src="img/7-1.png"></span>
+    <div class="sphere--item sphere--item-1">
+      <div class="sphere">
+        <div class="sphere--row sphere--row-1">
+          <span class="item sphere--item-1"><img src="img/1.png"></span>
+          <span class="item sphere--item-2"><img src="img/2.png"></span>
+          <span class="item sphere--item-3"><img src="img/3.png"></span>
+          <span class="item sphere--item-4"><img src="img/4.png"></span>
+          <span class="item sphere--item-5"><img src="img/5.png"></span>
+          <span class="item sphere--item-6"><img src="img/6.png"></span>
+          <span class="item sphere--item-7"><img src="img/7.png"></span>
         </div>
-        <div class="row row2">
-          <span class="item item1"><img src="img/1-1.png"></span>
-          <span class="item item2"><img src="img/2-1.png"></span>
-          <span class="item item3"><img src="img/3-1.png"></span>
-          <span class="item item4"><img src="img/4-1.png"></span>
-          <span class="item item5"><img src="img/5-1.png"></span>
-          <span class="item item6"><img src="img/6-1.png"></span>
-          <span class="item item7"><img src="img/7-2.png"></span>
+        <div class="sphere--row sphere--row-2">
+          <span class="item sphere--item-1"><img src="img/1.png"></span>
+          <span class="item sphere--item-2"><img src="img/2.png"></span>
+          <span class="item sphere--item-3"><img src="img/3.png"></span>
+          <span class="item sphere--item-4"><img src="img/4.png"></span>
+          <span class="item sphere--item-5"><img src="img/5.png"></span>
+          <span class="item sphere--item-6"><img src="img/6.png"></span>
+          <span class="item sphere--item-7"><img src="img/7.png"></span>
         </div>
-        <div class="row row3">
-          <span class="item item1"><img src="img/1-1.png"></span>
-          <span class="item item2"><img src="img/2-1.png"></span>
-          <span class="item item3"><img src="img/3-1.png"></span>
-          <span class="item item4"><img src="img/4-1.png"></span>
-          <span class="item item5"><img src="img/5-1.png"></span>
-          <span class="item item6"><img src="img/6-1.png"></span>
-          <span class="item item7"><img src="img/7-1.png"></span>
+        <div class="sphere--row sphere--row-3">
+          <span class="item sphere--item-1"><img src="img/1.png"></span>
+          <span class="item sphere--item-2"><img src="img/2.png"></span>
+          <span class="item sphere--item-3"><img src="img/3.png"></span>
+          <span class="item sphere--item-4"><img src="img/4.png"></span>
+          <span class="item sphere--item-5"><img src="img/5.png"></span>
+          <span class="item sphere--item-6"><img src="img/6.png"></span>
+          <span class="item sphere--item-7"><img src="img/7.png"></span>
         </div>
-        <div class="row row4">
-          <span class="item item1"><img src="img/1-1.png"></span>
-          <span class="item item2"><img src="img/2-1.png"></span>
-          <span class="item item3"><img src="img/3-1.png"></span>
-          <span class="item item4"><img src="img/4-1.png"></span>
-          <span class="item item5"><img src="img/5-1.png"></span>
-          <span class="item item6"><img src="img/6-1.png"></span>
-          <span class="item item7"><img src="img/7-2.png"></span>
+        <div class="sphere--row sphere--row-4">
+          <span class="item sphere--item-1"><img src="img/1.png"></span>
+          <span class="item sphere--item-2"><img src="img/2.png"></span>
+          <span class="item sphere--item-3"><img src="img/3.png"></span>
+          <span class="item sphere--item-4"><img src="img/4.png"></span>
+          <span class="item sphere--item-5"><img src="img/5.png"></span>
+          <span class="item sphere--item-6"><img src="img/6.png"></span>
+          <span class="item sphere--item-7"><img src="img/7.png"></span>
         </div>
-        <div class="row row5">
-          <span class="item item1"><img src="img/1-1.png"></span>
-          <span class="item item2"><img src="img/2-1.png"></span>
-          <span class="item item3"><img src="img/3-1.png"></span>
-          <span class="item item4"><img src="img/4-1.png"></span>
-          <span class="item item5"><img src="img/5-1.png"></span>
-          <span class="item item6"><img src="img/6-1.png"></span>
-          <span class="item item7"><img src="img/7-2.png"></span>
+        <div class="sphere--row sphere--row-5">
+          <span class="item sphere--item-1"><img src="img/1.png"></span>
+          <span class="item sphere--item-2"><img src="img/2.png"></span>
+          <span class="item sphere--item-3"><img src="img/3.png"></span>
+          <span class="item sphere--item-4"><img src="img/4.png"></span>
+          <span class="item sphere--item-5"><img src="img/5.png"></span>
+          <span class="item sphere--item-6"><img src="img/6.png"></span>
+          <span class="item sphere--item-7"><img src="img/7.png"></span>
         </div>
-        <div class="row row6">
-          <span class="item item1"><img src="img/1-1.png"></span>
-          <span class="item item2"><img src="img/2-1.png"></span>
-          <span class="item item3"><img src="img/3-1.png"></span>
-          <span class="item item4"><img src="img/4-1.png"></span>
-          <span class="item item5"><img src="img/5-1.png"></span>
-          <span class="item item6"><img src="img/6-1.png"></span>
-          <span class="item item7"><img src="img/7-1.png"></span>
+        <div class="sphere--row sphere--row-6">
+          <span class="item sphere--item-1"><img src="img/1.png"></span>
+          <span class="item sphere--item-2"><img src="img/2.png"></span>
+          <span class="item sphere--item-3"><img src="img/3.png"></span>
+          <span class="item sphere--item-4"><img src="img/4.png"></span>
+          <span class="item sphere--item-5"><img src="img/5.png"></span>
+          <span class="item sphere--item-6"><img src="img/6.png"></span>
+          <span class="item sphere--item-7"><img src="img/7.png"></span>
         </div>
-        <div class="row row7">
-          <span class="item item1"><img src="img/1-1.png"></span>
-          <span class="item item2"><img src="img/2-1.png"></span>
-          <span class="item item3"><img src="img/3-1.png"></span>
-          <span class="item item4"><img src="img/4-1.png"></span>
-          <span class="item item5"><img src="img/5-1.png"></span>
-          <span class="item item6"><img src="img/6-1.png"></span>
-          <span class="item item7"><img src="img/7-1.png"></span>
+        <div class="sphere--row sphere--row-7">
+          <span class="item sphere--item-1"><img src="img/1.png"></span>
+          <span class="item sphere--item-2"><img src="img/2.png"></span>
+          <span class="item sphere--item-3"><img src="img/3.png"></span>
+          <span class="item sphere--item-4"><img src="img/4.png"></span>
+          <span class="item sphere--item-5"><img src="img/5.png"></span>
+          <span class="item sphere--item-6"><img src="img/6.png"></span>
+          <span class="item sphere--item-7"><img src="img/7.png"></span>
         </div>
       </div>
     </div>
-    <div class="spheres--item spheres--item-3">
-      <div class="spheres">
-        <div class="row row1">
-          <span class="item item1"><img src="img/1-2.png"></span>
-          <span class="item item2"><img src="img/2-2.png"></span>
-          <span class="item item3"><img src="img/3-2.png"></span>
-          <span class="item item4"><img src="img/4-2.png"></span>
-          <span class="item item5"><img src="img/5-2.png"></span>
-          <span class="item item6"><img src="img/6-2.png"></span>
-          <span class="item item7"><img src="img/7-1.png"></span>
+    <div class="sphere--item sphere--item-2">
+      <div class="sphere">
+        <div class="sphere--row sphere--row-1">
+          <span class="item sphere--item-1"><img src="img/1-1.png"></span>
+          <span class="item sphere--item-2"><img src="img/2-1.png"></span>
+          <span class="item sphere--item-3"><img src="img/3-1.png"></span>
+          <span class="item sphere--item-4"><img src="img/4-1.png"></span>
+          <span class="item sphere--item-5"><img src="img/5-1.png"></span>
+          <span class="item sphere--item-6"><img src="img/6-1.png"></span>
+          <span class="item sphere--item-7"><img src="img/7-2.png"></span>
         </div>
-        <div class="row row2">
-          <span class="item item1"><img src="img/1-2.png"></span>
-          <span class="item item2"><img src="img/2-2.png"></span>
-          <span class="item item3"><img src="img/3-2.png"></span>
-          <span class="item item4"><img src="img/4-2.png"></span>
-          <span class="item item5"><img src="img/5-2.png"></span>
-          <span class="item item6"><img src="img/6-2.png"></span>
-          <span class="item item7"><img src="img/7-1.png"></span>
+        <div class="sphere--row sphere--row-2">
+          <span class="item sphere--item-1"><img src="img/1-1.png"></span>
+          <span class="item sphere--item-2"><img src="img/2-1.png"></span>
+          <span class="item sphere--item-3"><img src="img/3-1.png"></span>
+          <span class="item sphere--item-4"><img src="img/4-1.png"></span>
+          <span class="item sphere--item-5"><img src="img/5-1.png"></span>
+          <span class="item sphere--item-6"><img src="img/6-1.png"></span>
+          <span class="item sphere--item-7"><img src="img/7-2.png"></span>
         </div>
-        <div class="row row3">
-          <span class="item item1"><img src="img/1-2.png"></span>
-          <span class="item item2"><img src="img/2-2.png"></span>
-          <span class="item item3"><img src="img/3-2.png"></span>
-          <span class="item item4"><img src="img/4-2.png"></span>
-          <span class="item item5"><img src="img/5-2.png"></span>
-          <span class="item item6"><img src="img/6-2.png"></span>
-          <span class="item item7"><img src="img/7-1.png"></span>
+        <div class="sphere--row sphere--row-3">
+          <span class="item sphere--item-1"><img src="img/1-1.png"></span>
+          <span class="item sphere--item-2"><img src="img/2-1.png"></span>
+          <span class="item sphere--item-3"><img src="img/3-1.png"></span>
+          <span class="item sphere--item-4"><img src="img/4-1.png"></span>
+          <span class="item sphere--item-5"><img src="img/5-1.png"></span>
+          <span class="item sphere--item-6"><img src="img/6-1.png"></span>
+          <span class="item sphere--item-7"><img src="img/7-2.png"></span>
         </div>
-        <div class="row row4">
-          <span class="item item1"><img src="img/1-2.png"></span>
-          <span class="item item2"><img src="img/2-2.png"></span>
-          <span class="item item3"><img src="img/3-2.png"></span>
-          <span class="item item4"><img src="img/4-2.png"></span>
-          <span class="item item5"><img src="img/5-2.png"></span>
-          <span class="item item6"><img src="img/6-2.png"></span>
-          <span class="item item7"><img src="img/7-1.png"></span>
+        <div class="sphere--row sphere--row-4">
+          <span class="item sphere--item-1"><img src="img/1-1.png"></span>
+          <span class="item sphere--item-2"><img src="img/2-1.png"></span>
+          <span class="item sphere--item-3"><img src="img/3-1.png"></span>
+          <span class="item sphere--item-4"><img src="img/4-1.png"></span>
+          <span class="item sphere--item-5"><img src="img/5-1.png"></span>
+          <span class="item sphere--item-6"><img src="img/6-1.png"></span>
+          <span class="item sphere--item-7"><img src="img/7-2.png"></span>
         </div>
-        <div class="row row5">
-          <span class="item item1"><img src="img/1-2.png"></span>
-          <span class="item item2"><img src="img/2-2.png"></span>
-          <span class="item item3"><img src="img/3-2.png"></span>
-          <span class="item item4"><img src="img/4-2.png"></span>
-          <span class="item item5"><img src="img/5-2.png"></span>
-          <span class="item item6"><img src="img/6-2.png"></span>
-          <span class="item item7"><img src="img/7-1.png"></span>
+        <div class="sphere--row sphere--row-5">
+          <span class="item sphere--item-1"><img src="img/1-1.png"></span>
+          <span class="item sphere--item-2"><img src="img/2-1.png"></span>
+          <span class="item sphere--item-3"><img src="img/3-1.png"></span>
+          <span class="item sphere--item-4"><img src="img/4-1.png"></span>
+          <span class="item sphere--item-5"><img src="img/5-1.png"></span>
+          <span class="item sphere--item-6"><img src="img/6-1.png"></span>
+          <span class="item sphere--item-7"><img src="img/7-2.png"></span>
         </div>
-        <div class="row row6">
-          <span class="item item1"><img src="img/1-2.png"></span>
-          <span class="item item2"><img src="img/2-2.png"></span>
-          <span class="item item3"><img src="img/3-2.png"></span>
-          <span class="item item4"><img src="img/4-2.png"></span>
-          <span class="item item5"><img src="img/5-2.png"></span>
-          <span class="item item6"><img src="img/6-2.png"></span>
-          <span class="item item7"><img src="img/7-1.png"></span>
+        <div class="sphere--row sphere--row-6">
+          <span class="item sphere--item-1"><img src="img/1-1.png"></span>
+          <span class="item sphere--item-2"><img src="img/2-1.png"></span>
+          <span class="item sphere--item-3"><img src="img/3-1.png"></span>
+          <span class="item sphere--item-4"><img src="img/4-1.png"></span>
+          <span class="item sphere--item-5"><img src="img/5-1.png"></span>
+          <span class="item sphere--item-6"><img src="img/6-1.png"></span>
+          <span class="item sphere--item-7"><img src="img/7-2.png"></span>
         </div>
-        <div class="row row7">
-          <span class="item item1"><img src="img/1-2.png"></span>
-          <span class="item item2"><img src="img/2-2.png"></span>
-          <span class="item item3"><img src="img/3-2.png"></span>
-          <span class="item item4"><img src="img/4-2.png"></span>
-          <span class="item item5"><img src="img/5-2.png"></span>
-          <span class="item item6"><img src="img/6-2.png"></span>
-          <span class="item item7"><img src="img/7-1.png"></span>
+        <div class="sphere--row sphere--row-7">
+          <span class="item sphere--item-1"><img src="img/1-1.png"></span>
+          <span class="item sphere--item-2"><img src="img/2-1.png"></span>
+          <span class="item sphere--item-3"><img src="img/3-1.png"></span>
+          <span class="item sphere--item-4"><img src="img/4-1.png"></span>
+          <span class="item sphere--item-5"><img src="img/5-1.png"></span>
+          <span class="item sphere--item-6"><img src="img/6-1.png"></span>
+          <span class="item sphere--item-7"><img src="img/7-2.png"></span>
+        </div>
+      </div>
+    </div>
+    <div class="sphere--item sphere--item-3">
+      <div class="sphere">
+        <div class="sphere--row sphere--row-1">
+          <span class="item sphere--item-1"><img src="img/1-2.png"></span>
+          <span class="item sphere--item-2"><img src="img/2-2.png"></span>
+          <span class="item sphere--item-3"><img src="img/3-2.png"></span>
+          <span class="item sphere--item-4"><img src="img/4-2.png"></span>
+          <span class="item sphere--item-5"><img src="img/5-2.png"></span>
+          <span class="item sphere--item-6"><img src="img/6-2.png"></span>
+          <span class="item sphere--item-7"><img src="img/7-1.png"></span>
+        </div>
+        <div class="sphere--row sphere--row-2">
+          <span class="item sphere--item-1"><img src="img/1-2.png"></span>
+          <span class="item sphere--item-2"><img src="img/2-2.png"></span>
+          <span class="item sphere--item-3"><img src="img/3-2.png"></span>
+          <span class="item sphere--item-4"><img src="img/4-2.png"></span>
+          <span class="item sphere--item-5"><img src="img/5-2.png"></span>
+          <span class="item sphere--item-6"><img src="img/6-2.png"></span>
+          <span class="item sphere--item-7"><img src="img/7-1.png"></span>
+        </div>
+        <div class="sphere--row sphere--row-3">
+          <span class="item sphere--item-1"><img src="img/1-2.png"></span>
+          <span class="item sphere--item-2"><img src="img/2-2.png"></span>
+          <span class="item sphere--item-3"><img src="img/3-2.png"></span>
+          <span class="item sphere--item-4"><img src="img/4-2.png"></span>
+          <span class="item sphere--item-5"><img src="img/5-2.png"></span>
+          <span class="item sphere--item-6"><img src="img/6-2.png"></span>
+          <span class="item sphere--item-7"><img src="img/7-1.png"></span>
+        </div>
+        <div class="sphere--row sphere--row-4">
+          <span class="item sphere--item-1"><img src="img/1-2.png"></span>
+          <span class="item sphere--item-2"><img src="img/2-2.png"></span>
+          <span class="item sphere--item-3"><img src="img/3-2.png"></span>
+          <span class="item sphere--item-4"><img src="img/4-2.png"></span>
+          <span class="item sphere--item-5"><img src="img/5-2.png"></span>
+          <span class="item sphere--item-6"><img src="img/6-2.png"></span>
+          <span class="item sphere--item-7"><img src="img/7-1.png"></span>
+        </div>
+        <div class="sphere--row sphere--row-5">
+          <span class="item sphere--item-1"><img src="img/1-2.png"></span>
+          <span class="item sphere--item-2"><img src="img/2-2.png"></span>
+          <span class="item sphere--item-3"><img src="img/3-2.png"></span>
+          <span class="item sphere--item-4"><img src="img/4-2.png"></span>
+          <span class="item sphere--item-5"><img src="img/5-2.png"></span>
+          <span class="item sphere--item-6"><img src="img/6-2.png"></span>
+          <span class="item sphere--item-7"><img src="img/7-1.png"></span>
+        </div>
+        <div class="sphere--row sphere--row-6">
+          <span class="item sphere--item-1"><img src="img/1-2.png"></span>
+          <span class="item sphere--item-2"><img src="img/2-2.png"></span>
+          <span class="item sphere--item-3"><img src="img/3-2.png"></span>
+          <span class="item sphere--item-4"><img src="img/4-2.png"></span>
+          <span class="item sphere--item-5"><img src="img/5-2.png"></span>
+          <span class="item sphere--item-6"><img src="img/6-2.png"></span>
+          <span class="item sphere--item-7"><img src="img/7-1.png"></span>
+        </div>
+        <div class="sphere--row sphere--row-7">
+          <span class="item sphere--item-1"><img src="img/1-2.png"></span>
+          <span class="item sphere--item-2"><img src="img/2-2.png"></span>
+          <span class="item sphere--item-3"><img src="img/3-2.png"></span>
+          <span class="item sphere--item-4"><img src="img/4-2.png"></span>
+          <span class="item sphere--item-5"><img src="img/5-2.png"></span>
+          <span class="item sphere--item-6"><img src="img/6-2.png"></span>
+          <span class="item sphere--item-7"><img src="img/7-1.png"></span>
         </div>
       </div>
     </div>
   </div>
-  <div class="spheres--control">
-    <span class="spheres--prev js-spheres-control">Previous</span>
-    <span class="spheres--next js-spheres-control">Next</span>
+  <div class="sphere--control">
+    <span class="sphere--prev js-sphere-control">Previous</span>
+    <span class="sphere--next js-sphere-control">Next</span>
   </div>
-
   <script
   src="https://code.jquery.com/jquery-1.12.4.min.js"
   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
   crossorigin="anonymous"></script>
-  <script src="spheres.js"></script>
+  <script src="sphere.js"></script>
 </body>
 </html>

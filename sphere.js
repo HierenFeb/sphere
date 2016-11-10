@@ -1,13 +1,13 @@
 $(document).ready(function() {
-  var $spheresControl = $('.js-spheres-control'),
+  var $sphereControl = $('.js-sphere-control'),
   $item = $('.item');
 
   sphereMotion = function (classOut, classIn, $getSphere, $activeSphere, previous, maxRowIndex) {
 		var markUp;
 
-  	$activeSphere.find('.row').each(function(indexTo) {
+  	$activeSphere.find('.sphere--row').each(function(indexTo) {
 	 		if(previous) {
-				var $getImage = $getSphere.find('.row'+ (indexTo + 1) +' .item:not(.getted)').first();
+				var $getImage = $getSphere.find('.sphere--row-'+ (indexTo + 1) +' .item:not(.getted)').first();
 	 			var currentImage = $getImage.children('img').attr('src');
 	 			$getImage.addClass('getted');
 
@@ -23,7 +23,7 @@ $(document).ready(function() {
 				};
 			}
 			else {
-				var $getImage = $getSphere.find('.row'+ (indexTo + 1) +' .item:not(.getted)').last();
+				var $getImage = $getSphere.find('.sphere--row-'+ (indexTo + 1) +' .item:not(.getted)').last();
 	 			var currentImage = $getImage.children('img').attr('src');
 	 			$getImage.addClass('getted');
 
@@ -46,21 +46,21 @@ $(document).ready(function() {
 		}, 20);
   };
 
-  $spheresControl.click(function(){
+  $sphereControl.click(function(){
 
-		var $activeSphere = $('.spheres--active');
+		var $activeSphere = $('.sphere--active');
 	  var classOut = 'item-next--out',
 	  		previous = false;
 	  		classIn = 'item-next--in';
 		var dataActive = parseInt($activeSphere.attr('data-active'));
-		var sphereLength = $('.spheres--item').length - 1;
+		var sphereLength = $('.sphere--item').length - 1;
 		//Get max Row index
-		var rowLength = $activeSphere.find('.row').length;
+		var rowLength = $activeSphere.find('.sphere--row').length;
 		var maxRowIndex = rowLength - 1;
 
 		// Next/Prev button with loop
 		// Click previous button
-  	if($(this).hasClass('spheres--prev')) {
+  	if($(this).hasClass('sphere--prev')) {
   		previous = true,
 		  classOut = 'item-prev--out',
 		  classIn = 'item-prev--in';
@@ -85,7 +85,7 @@ $(document).ready(function() {
 		  }
   	}
 
-		var $getSphere = $('.spheres--item-'+ dataActive);
+		var $getSphere = $('.sphere--item-'+ dataActive);
 		//Reset data active for active Sphere
 		$activeSphere.attr('data-active',dataActive)
 

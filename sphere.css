@@ -1,0 +1,310 @@
+.sphere--wrap {
+  position: relative;
+  width: 350px;
+  height: 350px;
+}
+
+.sphere--item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+}
+
+.sphere--active {
+  z-index: 3;
+  opacity: 1;
+}
+
+.sphere {
+  background-color: transparent;
+  background-image: url(ball.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 100%;
+  height: 350px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  width: 350px;
+  z-index: 99;
+}
+
+@keyframes itemNextIn {
+  0%   {left: -100%;}
+  100% {left: 0;}
+}
+
+@keyframes itemNextOut {
+  0%   {left: 0;}
+  100% {left: 100%;}
+}
+
+@keyframes itemPrevIn {
+  0%   {left: 100%;}
+  100% {left: 0;}
+}
+
+@keyframes itemPrevOut {
+  0%   {left: 0;}
+  100% {left: -100%;}
+}
+
+.item-prev--out {
+  animation: itemPrevOut .03s;
+}
+
+.item-prev--in {
+  animation: itemPrevIn .03s;
+}
+
+.item-next--out {
+  animation: itemNextOut .03s;
+}
+
+.item-next--in {
+  animation: itemNextIn .03s;
+}
+
+.sphere--row {
+  display: flex;
+}
+
+.sphere--row:first-of-type {
+}
+
+.item {
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 50px;
+}
+
+.item:hover {
+  background-color: red;
+  box-shadow: 0 0 1px 0 #000 inset;
+  cursor: pointer;
+}
+
+.item:first-of-type {
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+/* row 1 */
+.sphere--row-1 .sphere--item-2 {
+  transform: translate(8px, 3px) scale3d(.5, .5, 1) perspective(250px) rotateX(-82deg) rotateY(35deg) rotateZ(40deg);
+}
+
+.sphere--row-1 .sphere--item-3 {
+  transform: translate(-8px, -10px) scale3d(1.8, .5, 1) perspective(250px) rotateX(-36deg) rotateY(50deg) rotateZ(2deg);
+  border-radius: 100% 0 0 0;
+}
+
+.sphere--row-1 .sphere--item-4 {
+  transform: translateY(-16px) perspective(250px) rotateX(62deg) scale(1.2, .8);
+  border-radius: 15% 15% 0 0;
+}
+
+.sphere--row-1 .sphere--item-5 {
+  transform: translate(8px, -10px) scale3d(1.8, .5, 1) perspective(250px) rotateX(-36deg) rotateY(-50deg) rotateZ(-2deg);
+  border-radius: 0 100% 0 0;
+}
+
+.sphere--row-1 .sphere--item-6 {
+  transform: translate(-8px, 3px) scale3d(.5, .5, 1) perspective(250px) rotateX(82deg) rotateY(35deg) rotateZ(40deg);
+}
+
+/* row 2 */
+.sphere--row-2 .sphere--item-1 {
+  transform: translate(5px, 5px) scale3d(.5, .5, 1) perspective(200px) rotateX(76deg) rotateY(-59deg) rotateZ(48deg);
+}
+
+.sphere--row-2 .sphere--item-2 {
+  transform: translate(-18px, -15px) scale3d(1.3, 1.1, 1)  perspective(200px) rotateX(52deg) rotateY(-45deg) rotateZ(18deg);
+}
+
+.sphere--row-2 .sphere--item-3 {
+  transform: translate(-16px, -28px) scale3d(1.4, 1.1, 1)  perspective(200px) rotateX(36deg) rotateY(-30deg) rotateZ(8deg);
+}
+
+.sphere--row-2 .sphere--item-4 {
+  transform: translateY(-35px) perspective(250px) rotateX(36deg) scale( 1.35, 1.2);
+}
+
+.sphere--row-2 .sphere--item-5 {
+  transform: translate(16px, -28px) scale3d(1.4, 1.1, 1) perspective(200px) rotateX(36deg) rotateY(30deg) rotateZ(-8deg);
+}
+
+.sphere--row-2 .sphere--item-6 {
+  transform: translate(18px, -15px) scale3d(1.3, 1.1, 1)  perspective(200px) rotateX(52deg) rotateY(45deg) rotateZ(-18deg);
+}
+
+.sphere--row-2 .sphere--item-7 {
+  transform: translate(-5px, 5px) scale3d(.5, .5, 1) perspective(200px) rotateX(76deg) rotateY(59deg) rotateZ(-48deg);
+}
+
+/* row 3 */
+.sphere--row-3 .sphere--item-1 {
+  transform: translate(-10px, -6px) scale3d(.5, 1.5, 1) perspective(250px) rotateX(56deg) rotateY(-36deg) rotateZ(33deg);
+  border-radius: 100% 0 0 0;
+}
+
+.sphere--row-3 .sphere--item-2 {
+  transform: translate(-28px, -15px) scale3d(1.2, 1.4, 1)  perspective(200px) rotateX(33deg) rotateY(-35deg) rotateZ(11deg);
+}
+
+.sphere--row-3 .sphere--item-3 {
+  transform: translate(-22px, -22px) scale3d(1.4, 1.4, 1)  perspective(200px) rotateX(20deg) rotateY(-20deg) rotateZ(4deg);
+}
+
+.sphere--row-3 .sphere--item-4 {
+  transform: translateY(-24px) perspective(400px) rotateX(22.5deg) scale(1.5);
+}
+
+.sphere--row-3 .sphere--item-5 {
+  transform: translate(22px, -22px) scale3d(1.4, 1.4, 1)  perspective(200px) rotateX(20deg) rotateY(20deg) rotateZ(-4deg);
+}
+
+.sphere--row-3 .sphere--item-6 {
+  transform: translate(29px, -15px) scale3d(1.2, 1.4, 1)  perspective(200px) rotateX(33deg) rotateY(35deg) rotateZ(-11deg);
+}
+
+.sphere--row-3 .sphere--item-7 {
+  transform: translate(10px, -6px) scale3d(.5, 1.5, 1) perspective(250px) rotateX(56deg) rotateY(36deg) rotateZ(-33deg);
+  border-radius: 0 100% 0 0;
+}
+
+/* row 4 */
+.sphere--row-4 .sphere--item-1 {
+  transform: translateX(-16px) perspective(250px) rotateY(-67.5deg) scale(.8, 1.1);
+  border-radius: 15% 0 0 15%;
+}
+
+.sphere--row-4 .sphere--item-2 {
+  transform: translateX(-35px) perspective(250px) rotateY(-45deg) scale(1.35, 1.3);
+  z-index: 31;
+}
+
+.sphere--row-4 .sphere--item-3 {
+  transform: translateX(-24px) perspective(400px) rotateY(-22.5deg) scale(1.5);
+  z-index: 2;
+}
+
+.sphere--row-4 .sphere--item-4 {
+  transform: scale(1.57);
+  z-index: 3;
+}
+
+.sphere--row-4 .sphere--item-5 {
+  transform: translateX(24px) perspective(400px) rotateY(22.5deg) scale(1.5);
+  z-index: 2;
+}
+
+.sphere--row-4 .sphere--item-6 {
+  transform: translateX(35px) perspective(250px) rotateY(45deg) scale(1.35, 1.3);
+  z-index: 1;
+}
+
+.sphere--row-4 .sphere--item-7 {
+  transform: translateX(16px) perspective(250px) rotateY(67.5deg) scale(.8, 1.1);
+  border-radius: 0 15% 15% 0;
+}
+
+
+/* row 5 */
+.sphere--row-5 .sphere--item-1 {
+  transform: translate(-12px, 5px) scale3d(.5, 1.5, 1) perspective(250px) rotateX(-56deg) rotateY(-36deg) rotateZ(-33deg);
+  border-radius: 0 0 0 100%;
+}
+
+.sphere--row-5 .sphere--item-2 {
+  transform: translate(-30px, 15px) scale3d(1.2, 1.4, 1)  perspective(200px) rotateX(-33deg) rotateY(-35deg) rotateZ(-11deg);
+}
+
+.sphere--row-5 .sphere--item-3 {
+  transform: translate(-22px, 22px) scale3d(1.4, 1.4, 1)  perspective(200px) rotateX(-20deg) rotateY(-20deg) rotateZ(-4deg);
+}
+
+.sphere--row-5 .sphere--item-4 {
+  transform: translateY(24px) perspective(400px) rotateX(-22.5deg) scale(1.5);
+}
+
+.sphere--row-5 .sphere--item-5 {
+  transform: translate(22px, 22px) scale3d(1.4, 1.4, 1)  perspective(200px) rotateX(-20deg) rotateY(20deg) rotateZ(4deg);
+}
+.sphere--row-5 .sphere--item-6 {
+  transform: translate(30px, 15px) scale3d(1.2, 1.4, 1)  perspective(200px) rotateX(-33deg) rotateY(35deg) rotateZ(11deg);
+}
+
+.sphere--row-5 .sphere--item-7 {
+  transform: translate(12px, 5px) scale3d(.5, 1.5, 1) perspective(250px) rotateX(-56deg) rotateY(36deg) rotateZ(33deg);
+  border-radius: 0 0 100% 0;
+}
+
+/* row 6 */
+.sphere--row-6 .sphere--item-1 {
+  transform: translate(5px, -5px) scale3d(.5, .5, 1) perspective(200px) rotateX(-76deg) rotateY(-59deg) rotateZ(-48deg);
+}
+
+.sphere--row-6 .sphere--item-2 {
+  transform: translate(-18px, 15px) scale3d(1.3, 1.1, 1)  perspective(200px) rotateX(-52deg) rotateY(-45deg) rotateZ(-18deg);
+}
+
+.sphere--row-6 .sphere--item-3 {
+  transform: translate(-17px, 28px) scale3d(1.4, 1.1, 1) perspective(200px) rotateX(-36deg) rotateY(-30deg) rotateZ(-8deg);
+}
+
+.sphere--row-6 .sphere--item-4 {
+  transform: translateY(35px) perspective(250px) rotateX(-36deg) scale( 1.35, 1.2);
+}
+
+.sphere--row-6 .sphere--item-5 {
+  background-color: red;
+  transform: translate(17px, 28px) scale3d(1.4, 1.1, 1) perspective(200px) rotateX(-36deg) rotateY(30deg) rotateZ(8deg);
+}
+
+.sphere--row-6 .sphere--item-6 {
+  transform: translate(18px, 15px) scale3d(1.3, 1.1, 1)  perspective(200px) rotateX(-52deg) rotateY(45deg) rotateZ(18deg);
+}
+
+.sphere--row-6 .sphere--item-7 {
+  transform: translate(-5px, -5px) scale3d(.5, .5, 1) perspective(200px) rotateX(-76deg) rotateY(59deg) rotateZ(48deg);
+}
+
+/* row 7 */
+.sphere--row-7 .sphere--item-2 {
+  transform: translate(8px, -3px) scale3d(.5, .5, 1) perspective(250px) rotateX(82deg) rotateY(35deg) rotateZ(-40deg);
+}
+
+.sphere--row-7 .sphere--item-3 {
+  transform: translate(-8px, 10px) scale3d(1.8, .5, 1) perspective(250px) rotateX(36deg) rotateY(50deg) rotateZ(2deg);
+  border-radius: 0 0 0 100%;
+}
+
+.sphere--row-7 .sphere--item-4 {
+  transform: translateY(16px) perspective(250px) rotateX(-62deg) scale(1.2, .8);
+  border-radius: 0 0 15% 15%;
+}
+
+.sphere--row-7 .sphere--item-5 {
+  transform: translate(8px, 10px) scale3d(1.8, .5, 1) perspective(250px) rotateX(36deg) rotateY(-50deg) rotateZ(2deg);
+  border-radius: 0 0 100% 0;
+}
+
+.sphere--row-7 .sphere--item-6 {
+  background-color: red;
+  transform: translate(-8px, -3px) scale3d(.5, .5, 1) perspective(250px) rotateX(-82deg) rotateY(35deg) rotateZ(-40deg);
+}
