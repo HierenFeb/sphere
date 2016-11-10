@@ -60,6 +60,7 @@ $(document).ready(function() {
 
 		// Next/Prev button with loop
 		// Click previous button
+		$(this).addClass('deactive');
   	if($(this).hasClass('sphere--prev')) {
   		previous = true,
 		  classOut = 'item-prev--out',
@@ -100,6 +101,7 @@ $(document).ready(function() {
 
   	setTimeout(function() {
 		  $('.getted').removeClass('getted');
+		  $sphereControl.removeClass('deactive');
 		}, 100 * rowLength);
   })
 });
