@@ -8,10 +8,15 @@ $(document).ready(function() {
 		var markUp;
 
   	$activeSphere.find('.sphere--row').each(function(indexTo) {
+  		// Set image default
+  		var currentImage = 'https://www.apn-gcr.org/wp-content/uploads/2016/01/person-placeholder-200x200.png';
+  		
 	 		if(previous) {
 				var $getImage = $getSphere.find('.sphere--row-'+ (indexTo + 1) +' .item:not(.getted)').first();
-	 			var currentImage = $getImage.children('img').attr('src');
-	 			$getImage.addClass('getted');
+				if($getImage.children('img').length) {
+	 				currentImage = $getImage.children('img').attr('src');
+	 				$getImage.addClass('getted');
+				}
 
 	 			for (i = maxRowIndex; i >= 0 ; i--) {
 	 				var indexItem = i,
@@ -26,8 +31,10 @@ $(document).ready(function() {
 			}
 			else {
 				var $getImage = $getSphere.find('.sphere--row-'+ (indexTo + 1) +' .item:not(.getted)').last();
-	 			var currentImage = $getImage.children('img').attr('src');
-	 			$getImage.addClass('getted');
+				if($getImage.children('img').length) {
+	 				currentImage = $getImage.children('img').attr('src');
+	 				$getImage.addClass('getted');
+				}
 
 	 			for (i = 0; i <= maxRowIndex ; i++) {
 	 				var indexItem = i,
