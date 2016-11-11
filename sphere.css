@@ -1,31 +1,4 @@
-.sphere--wrap {
-  position: relative;
-  width: 350px;
-  height: 350px;
-}
-
-.deactive {
-  pointer-events: none;
-}
-
-.sphere--next,
-.sphere--prev {
-  cursor: pointer;
-}
-
-.sphere--item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  opacity: 0;
-}
-
-.sphere--active {
-  z-index: 3;
-  opacity: 1;
-}
-
+/* line 1, sphere.scss */
 .sphere {
   background-color: transparent;
   background-image: url(ball.png);
@@ -40,50 +13,90 @@
   width: 350px;
   z-index: 99;
 }
-
-@keyframes itemNextIn {
-  0%   {left: -100%;}
-  100% {left: 0;}
+/* line 15, sphere.scss */
+.sphere--wrap {
+  position: relative;
+  width: 350px;
+  height: 350px;
 }
-
-@keyframes itemNextOut {
-  0%   {left: 0;}
-  100% {left: 100%;}
+/* line 21, sphere.scss */
+.sphere--next, .sphere--prev {
+  cursor: pointer;
 }
-
-@keyframes itemPrevIn {
-  0%   {left: 100%;}
-  100% {left: 0;}
+/* line 26, sphere.scss */
+.sphere--item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
 }
-
-@keyframes itemPrevOut {
-  0%   {left: 0;}
-  100% {left: -100%;}
+/* line 34, sphere.scss */
+.sphere--active {
+  z-index: 3;
+  opacity: 1;
 }
-
-.item-prev--out {
-  animation: itemPrevOut .03s;
-}
-
-.item-prev--in {
-  animation: itemPrevIn .03s;
-}
-
-.item-next--out {
-  animation: itemNextOut .03s;
-}
-
-.item-next--in {
-  animation: itemNextIn .03s;
-}
-
+/* line 39, sphere.scss */
 .sphere--row {
   display: flex;
 }
 
-.sphere--row:first-of-type {
+/* line 44, sphere.scss */
+.deactive {
+  pointer-events: none;
 }
 
+@keyframes itemNextIn {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes itemNextOut {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@keyframes itemPrevIn {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes itemPrevOut {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
+/* line 69, sphere.scss */
+.item-prev--out {
+  animation: itemPrevOut .03s;
+}
+/* line 73, sphere.scss */
+.item-prev--in {
+  animation: itemPrevIn .03s;
+}
+
+/* line 79, sphere.scss */
+.item-next--out {
+  animation: itemNextOut .03s;
+}
+/* line 83, sphere.scss */
+.item-next--in {
+  animation: itemNextIn .03s;
+}
+
+/* line 88, sphere.scss */
 .item {
   display: inline-block;
   height: 50px;
@@ -93,16 +106,12 @@
   text-align: center;
   width: 50px;
 }
-
+/* line 97, sphere.scss */
 .item:hover {
-  background-color: red;
   box-shadow: 0 0 1px 0 #000 inset;
   cursor: pointer;
 }
-
-.item:first-of-type {
-}
-
+/* line 102, sphere.scss */
 .item img {
   width: 100%;
   height: 100%;
@@ -113,207 +122,252 @@
 }
 
 /* row 1 */
+/* line 113, sphere.scss */
 .sphere--row-1 .sphere--item-2 {
-  transform: translate(8px, 3px) scale3d(.5, .5, 1) perspective(250px) rotateX(-82deg) rotateY(35deg) rotateZ(40deg);
+  transform: translate(8px, 3px) scale3d(0.5, 0.5, 1) perspective(250px) rotateX(-82deg) rotateY(35deg) rotateZ(40deg);
 }
 
+/* line 117, sphere.scss */
 .sphere--row-1 .sphere--item-3 {
-  transform: translate(-8px, -10px) scale3d(1.8, .5, 1) perspective(250px) rotateX(-36deg) rotateY(50deg) rotateZ(2deg);
+  transform: translate(-8px, -10px) scale3d(1.8, 0.5, 1) perspective(250px) rotateX(-36deg) rotateY(50deg) rotateZ(2deg);
   border-radius: 100% 0 0 0;
 }
 
+/* line 122, sphere.scss */
 .sphere--row-1 .sphere--item-4 {
-  transform: translateY(-16px) perspective(250px) rotateX(62deg) scale(1.2, .8);
+  transform: translateY(-16px) perspective(250px) rotateX(62deg) scale(1.2, 0.8);
   border-radius: 15% 15% 0 0;
 }
 
+/* line 127, sphere.scss */
 .sphere--row-1 .sphere--item-5 {
-  transform: translate(8px, -10px) scale3d(1.8, .5, 1) perspective(250px) rotateX(-36deg) rotateY(-50deg) rotateZ(-2deg);
+  transform: translate(8px, -10px) scale3d(1.8, 0.5, 1) perspective(250px) rotateX(-36deg) rotateY(-50deg) rotateZ(-2deg);
   border-radius: 0 100% 0 0;
 }
 
+/* line 132, sphere.scss */
 .sphere--row-1 .sphere--item-6 {
-  transform: translate(-8px, 3px) scale3d(.5, .5, 1) perspective(250px) rotateX(82deg) rotateY(35deg) rotateZ(40deg);
+  transform: translate(-8px, 3px) scale3d(0.5, 0.5, 1) perspective(250px) rotateX(82deg) rotateY(35deg) rotateZ(40deg);
 }
 
 /* row 2 */
+/* line 137, sphere.scss */
 .sphere--row-2 .sphere--item-1 {
-  transform: translate(5px, 5px) scale3d(.5, .5, 1) perspective(200px) rotateX(76deg) rotateY(-59deg) rotateZ(48deg);
+  transform: translate(5px, 5px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(76deg) rotateY(-59deg) rotateZ(48deg);
 }
 
+/* line 141, sphere.scss */
 .sphere--row-2 .sphere--item-2 {
-  transform: translate(-18px, -15px) scale3d(1.3, 1.1, 1)  perspective(200px) rotateX(52deg) rotateY(-45deg) rotateZ(18deg);
+  transform: translate(-18px, -15px) scale3d(1.3, 1.1, 1) perspective(200px) rotateX(52deg) rotateY(-45deg) rotateZ(18deg);
 }
 
+/* line 145, sphere.scss */
 .sphere--row-2 .sphere--item-3 {
-  transform: translate(-16px, -28px) scale3d(1.4, 1.1, 1)  perspective(200px) rotateX(36deg) rotateY(-30deg) rotateZ(8deg);
+  transform: translate(-16px, -28px) scale3d(1.4, 1.1, 1) perspective(200px) rotateX(36deg) rotateY(-30deg) rotateZ(8deg);
 }
 
+/* line 149, sphere.scss */
 .sphere--row-2 .sphere--item-4 {
-  transform: translateY(-35px) perspective(250px) rotateX(36deg) scale( 1.35, 1.2);
+  transform: translateY(-34px) perspective(250px) rotateX(36deg) scale(1.35, 1.2);
 }
 
+/* line 153, sphere.scss */
 .sphere--row-2 .sphere--item-5 {
   transform: translate(16px, -28px) scale3d(1.4, 1.1, 1) perspective(200px) rotateX(36deg) rotateY(30deg) rotateZ(-8deg);
 }
 
+/* line 157, sphere.scss */
 .sphere--row-2 .sphere--item-6 {
-  transform: translate(18px, -15px) scale3d(1.3, 1.1, 1)  perspective(200px) rotateX(52deg) rotateY(45deg) rotateZ(-18deg);
+  transform: translate(18px, -15px) scale3d(1.3, 1.1, 1) perspective(200px) rotateX(52deg) rotateY(45deg) rotateZ(-18deg);
 }
 
+/* line 161, sphere.scss */
 .sphere--row-2 .sphere--item-7 {
-  transform: translate(-5px, 5px) scale3d(.5, .5, 1) perspective(200px) rotateX(76deg) rotateY(59deg) rotateZ(-48deg);
+  transform: translate(-5px, 5px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(76deg) rotateY(59deg) rotateZ(-48deg);
 }
 
 /* row 3 */
+/* line 166, sphere.scss */
 .sphere--row-3 .sphere--item-1 {
-  transform: translate(-10px, -6px) scale3d(.5, 1.5, 1) perspective(250px) rotateX(56deg) rotateY(-36deg) rotateZ(33deg);
+  transform: translate(-10px, -6px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(56deg) rotateY(-36deg) rotateZ(33deg);
   border-radius: 100% 0 0 0;
 }
 
+/* line 171, sphere.scss */
 .sphere--row-3 .sphere--item-2 {
-  transform: translate(-28px, -15px) scale3d(1.2, 1.4, 1)  perspective(200px) rotateX(33deg) rotateY(-35deg) rotateZ(11deg);
+  transform: translate(-28px, -15px) scale3d(1.2, 1.4, 1) perspective(200px) rotateX(33deg) rotateY(-35deg) rotateZ(11deg);
 }
 
+/* line 175, sphere.scss */
 .sphere--row-3 .sphere--item-3 {
-  transform: translate(-22px, -22px) scale3d(1.4, 1.4, 1)  perspective(200px) rotateX(20deg) rotateY(-20deg) rotateZ(4deg);
+  transform: translate(-22px, -22px) scale3d(1.4, 1.4, 1) perspective(200px) rotateX(20deg) rotateY(-20deg) rotateZ(4deg);
 }
 
+/* line 179, sphere.scss */
 .sphere--row-3 .sphere--item-4 {
-  transform: translateY(-24px) perspective(400px) rotateX(22.5deg) scale(1.5);
+  transform: translateY(-24px) perspective(1000px) rotateX(22.5deg) scale(1.5, 1.5);
 }
 
+/* line 183, sphere.scss */
 .sphere--row-3 .sphere--item-5 {
-  transform: translate(22px, -22px) scale3d(1.4, 1.4, 1)  perspective(200px) rotateX(20deg) rotateY(20deg) rotateZ(-4deg);
+  transform: translate(22px, -22px) scale3d(1.4, 1.4, 1) perspective(200px) rotateX(20deg) rotateY(20deg) rotateZ(-4deg);
 }
 
+/* line 187, sphere.scss */
 .sphere--row-3 .sphere--item-6 {
-  transform: translate(29px, -15px) scale3d(1.2, 1.4, 1)  perspective(200px) rotateX(33deg) rotateY(35deg) rotateZ(-11deg);
+  transform: translate(29px, -15px) scale3d(1.2, 1.4, 1) perspective(200px) rotateX(33deg) rotateY(35deg) rotateZ(-11deg);
 }
 
+/* line 191, sphere.scss */
 .sphere--row-3 .sphere--item-7 {
-  transform: translate(10px, -6px) scale3d(.5, 1.5, 1) perspective(250px) rotateX(56deg) rotateY(36deg) rotateZ(-33deg);
+  transform: translate(10px, -6px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(56deg) rotateY(36deg) rotateZ(-33deg);
   border-radius: 0 100% 0 0;
 }
 
 /* row 4 */
+/* line 197, sphere.scss */
 .sphere--row-4 .sphere--item-1 {
-  transform: translateX(-16px) perspective(250px) rotateY(-67.5deg) scale(.8, 1.1);
+  transform: translateX(-18px) perspective(241px) rotateY(-65.5deg) scale(1, 1.15);
   border-radius: 15% 0 0 15%;
 }
 
+/* line 202, sphere.scss */
 .sphere--row-4 .sphere--item-2 {
-  transform: translateX(-35px) perspective(250px) rotateY(-45deg) scale(1.35, 1.3);
+  transform: translateX(-34px) perspective(135px) rotateY(-18deg) scale(1, 1.35);
   z-index: 31;
 }
 
+/* line 207, sphere.scss */
 .sphere--row-4 .sphere--item-3 {
-  transform: translateX(-24px) perspective(400px) rotateY(-22.5deg) scale(1.5);
+  transform: translateX(-25px) perspective(300px) rotateY(-20deg) scale(1.5);
   z-index: 2;
 }
 
+/* line 212, sphere.scss */
 .sphere--row-4 .sphere--item-4 {
-  transform: scale(1.57);
+  transform: scale(1.55);
   z-index: 3;
 }
 
+/* line 217, sphere.scss */
 .sphere--row-4 .sphere--item-5 {
-  transform: translateX(24px) perspective(400px) rotateY(22.5deg) scale(1.5);
+  transform: translateX(24px) perspective(400px) rotateY(10deg) scale(1.5);
   z-index: 2;
 }
 
+/* line 222, sphere.scss */
 .sphere--row-4 .sphere--item-6 {
-  transform: translateX(35px) perspective(250px) rotateY(45deg) scale(1.35, 1.3);
+  transform: translateX(35px) perspective(200px) rotateY(35deg) scale(1.2, 1.34);
   z-index: 1;
 }
 
+/* line 227, sphere.scss */
 .sphere--row-4 .sphere--item-7 {
-  transform: translateX(16px) perspective(250px) rotateY(67.5deg) scale(.8, 1.1);
+  transform: translateX(16px) perspective(250px) rotateY(67.5deg) scale(0.8, 1.1);
   border-radius: 0 15% 15% 0;
 }
 
-
 /* row 5 */
+/* line 234, sphere.scss */
 .sphere--row-5 .sphere--item-1 {
-  transform: translate(-12px, 5px) scale3d(.5, 1.5, 1) perspective(250px) rotateX(-56deg) rotateY(-36deg) rotateZ(-33deg);
+  transform: translate(-12px, 5px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(-56deg) rotateY(-36deg) rotateZ(-33deg);
   border-radius: 0 0 0 100%;
 }
 
+/* line 239, sphere.scss */
 .sphere--row-5 .sphere--item-2 {
-  transform: translate(-30px, 15px) scale3d(1.2, 1.4, 1)  perspective(200px) rotateX(-33deg) rotateY(-35deg) rotateZ(-11deg);
+  transform: translate(-30px, 15px) scale3d(1.2, 1.4, 1) perspective(200px) rotateX(-33deg) rotateY(-35deg) rotateZ(-11deg);
 }
 
+/* line 243, sphere.scss */
 .sphere--row-5 .sphere--item-3 {
-  transform: translate(-22px, 22px) scale3d(1.4, 1.4, 1)  perspective(200px) rotateX(-20deg) rotateY(-20deg) rotateZ(-4deg);
+  transform: translate(-22px, 22px) scale3d(1.4, 1.4, 1) perspective(200px) rotateX(-20deg) rotateY(-20deg) rotateZ(-4deg);
 }
 
+/* line 247, sphere.scss */
 .sphere--row-5 .sphere--item-4 {
   transform: translateY(24px) perspective(400px) rotateX(-22.5deg) scale(1.5);
 }
 
+/* line 251, sphere.scss */
 .sphere--row-5 .sphere--item-5 {
-  transform: translate(22px, 22px) scale3d(1.4, 1.4, 1)  perspective(200px) rotateX(-20deg) rotateY(20deg) rotateZ(4deg);
-}
-.sphere--row-5 .sphere--item-6 {
-  transform: translate(30px, 15px) scale3d(1.2, 1.4, 1)  perspective(200px) rotateX(-33deg) rotateY(35deg) rotateZ(11deg);
+  transform: translate(22px, 22px) scale3d(1.4, 1.4, 1) perspective(200px) rotateX(-20deg) rotateY(20deg) rotateZ(4deg);
 }
 
+/* line 254, sphere.scss */
+.sphere--row-5 .sphere--item-6 {
+  transform: translate(30px, 15px) scale3d(1.2, 1.4, 1) perspective(200px) rotateX(-33deg) rotateY(35deg) rotateZ(11deg);
+}
+
+/* line 258, sphere.scss */
 .sphere--row-5 .sphere--item-7 {
-  transform: translate(12px, 5px) scale3d(.5, 1.5, 1) perspective(250px) rotateX(-56deg) rotateY(36deg) rotateZ(33deg);
+  transform: translate(12px, 5px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(-56deg) rotateY(36deg) rotateZ(33deg);
   border-radius: 0 0 100% 0;
 }
 
 /* row 6 */
+/* line 264, sphere.scss */
 .sphere--row-6 .sphere--item-1 {
-  transform: translate(5px, -5px) scale3d(.5, .5, 1) perspective(200px) rotateX(-76deg) rotateY(-59deg) rotateZ(-48deg);
+  transform: translate(5px, -5px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(-76deg) rotateY(-59deg) rotateZ(-48deg);
 }
 
+/* line 268, sphere.scss */
 .sphere--row-6 .sphere--item-2 {
-  transform: translate(-18px, 15px) scale3d(1.3, 1.1, 1)  perspective(200px) rotateX(-52deg) rotateY(-45deg) rotateZ(-18deg);
+  transform: translate(-18px, 15px) scale3d(1.3, 1.1, 1) perspective(200px) rotateX(-52deg) rotateY(-45deg) rotateZ(-18deg);
 }
 
+/* line 272, sphere.scss */
 .sphere--row-6 .sphere--item-3 {
   transform: translate(-17px, 28px) scale3d(1.4, 1.1, 1) perspective(200px) rotateX(-36deg) rotateY(-30deg) rotateZ(-8deg);
 }
 
+/* line 276, sphere.scss */
 .sphere--row-6 .sphere--item-4 {
-  transform: translateY(35px) perspective(250px) rotateX(-36deg) scale( 1.35, 1.2);
+  transform: translateY(34px) perspective(250px) rotateX(-36deg) scale(1.4, 1.2);
 }
 
+/* line 280, sphere.scss */
 .sphere--row-6 .sphere--item-5 {
   background-color: red;
   transform: translate(17px, 28px) scale3d(1.4, 1.1, 1) perspective(200px) rotateX(-36deg) rotateY(30deg) rotateZ(8deg);
 }
 
+/* line 285, sphere.scss */
 .sphere--row-6 .sphere--item-6 {
-  transform: translate(18px, 15px) scale3d(1.3, 1.1, 1)  perspective(200px) rotateX(-52deg) rotateY(45deg) rotateZ(18deg);
+  transform: translate(18px, 15px) scale3d(1.3, 1.1, 1) perspective(200px) rotateX(-52deg) rotateY(45deg) rotateZ(18deg);
 }
 
+/* line 289, sphere.scss */
 .sphere--row-6 .sphere--item-7 {
-  transform: translate(-5px, -5px) scale3d(.5, .5, 1) perspective(200px) rotateX(-76deg) rotateY(59deg) rotateZ(48deg);
+  transform: translate(-5px, -5px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(-76deg) rotateY(59deg) rotateZ(48deg);
 }
 
 /* row 7 */
+/* line 294, sphere.scss */
 .sphere--row-7 .sphere--item-2 {
-  transform: translate(8px, -3px) scale3d(.5, .5, 1) perspective(250px) rotateX(82deg) rotateY(35deg) rotateZ(-40deg);
+  transform: translate(8px, -3px) scale3d(0.5, 0.5, 1) perspective(250px) rotateX(82deg) rotateY(35deg) rotateZ(-40deg);
 }
 
+/* line 298, sphere.scss */
 .sphere--row-7 .sphere--item-3 {
-  transform: translate(-8px, 10px) scale3d(1.8, .5, 1) perspective(250px) rotateX(36deg) rotateY(50deg) rotateZ(2deg);
+  transform: translate(-8px, 10px) scale3d(1.8, 0.5, 1) perspective(250px) rotateX(36deg) rotateY(50deg) rotateZ(2deg);
   border-radius: 0 0 0 100%;
 }
 
+/* line 303, sphere.scss */
 .sphere--row-7 .sphere--item-4 {
-  transform: translateY(16px) perspective(250px) rotateX(-62deg) scale(1.2, .8);
+  transform: translateY(16px) perspective(250px) rotateX(-62deg) scale(1.2, 0.8);
   border-radius: 0 0 15% 15%;
 }
 
+/* line 308, sphere.scss */
 .sphere--row-7 .sphere--item-5 {
-  transform: translate(8px, 10px) scale3d(1.8, .5, 1) perspective(250px) rotateX(36deg) rotateY(-50deg) rotateZ(2deg);
+  transform: translate(8px, 10px) scale3d(1.8, 0.5, 1) perspective(250px) rotateX(36deg) rotateY(-50deg) rotateZ(2deg);
   border-radius: 0 0 100% 0;
 }
 
+/* line 313, sphere.scss */
 .sphere--row-7 .sphere--item-6 {
   background-color: red;
-  transform: translate(-8px, -3px) scale3d(.5, .5, 1) perspective(250px) rotateX(-82deg) rotateY(35deg) rotateZ(-40deg);
+  transform: translate(-8px, -3px) scale3d(0.5, 0.5, 1) perspective(250px) rotateX(-82deg) rotateY(35deg) rotateZ(-40deg);
 }

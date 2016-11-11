@@ -1,6 +1,8 @@
 $(document).ready(function() {
   var $sphereControl = $('.js-sphere-control'),
-  $item = $('.item');
+  		$item = $('.item'),
+  		loop = true,
+  		random = true;
 
   sphereMotion = function (classOut, classIn, $getSphere, $activeSphere, previous, maxRowIndex) {
 		var markUp;
@@ -68,7 +70,7 @@ $(document).ready(function() {
 		  // If the first sphere is active;
 		  if(dataActive == 1) {
 		  	// Get data from the last sphere
-		  	dataActive = sphereLength;
+	  		dataActive = sphereLength;
 		  }
 		  else {
 		  	// Get data from previous sphere
@@ -78,7 +80,7 @@ $(document).ready(function() {
   	else {
 		  if(dataActive == sphereLength) {
 		  	// Get data from the first sphere
-		  	dataActive = 1;
+	  		dataActive = 1;
 		  }
 		  else {
 		  	// Get data from next sphere
