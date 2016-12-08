@@ -1,4 +1,4 @@
-/* line 7, sphere.scss */
+/* line 9, sphere.scss */
 .sphere {
   background-color: transparent;
   background-image: url(ball.png);
@@ -13,7 +13,7 @@
   width: 700px;
   z-index: 99;
 }
-/* line 20, sphere.scss */
+/* line 22, sphere.scss */
 .sphere:before {
   content: "";
   position: absolute;
@@ -24,57 +24,57 @@
   z-index: 999;
   pointer-events: none;
   border-radius: 100%;
-  -webkit-box-shadow: inset 0px 0px 96px 28px #004b64;
   -moz-box-shadow: inset 0px 0px 96px 28px #004b64;
+  -webkit-box-shadow: inset 0px 0px 96px 28px #004b64;
   box-shadow: inset 0px 0px 96px 28px #004b64;
 }
 @media screen and (max-width: 1440px) {
-  /* line 20, sphere.scss */
+  /* line 22, sphere.scss */
   .sphere:before {
-    -webkit-box-shadow: inset 0px 0px 64px 18px #004b64;
     -moz-box-shadow: inset 0px 0px 64px 18px #004b64;
+    -webkit-box-shadow: inset 0px 0px 64px 18px #004b64;
     box-shadow: inset 0px 0px 64px 18px #004b64;
   }
 }
 @media screen and (max-width: 1440px) {
-  /* line 7, sphere.scss */
+  /* line 9, sphere.scss */
   .sphere {
     height: 515px;
     width: 515px;
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 7, sphere.scss */
+  /* line 9, sphere.scss */
   .sphere {
     height: 385px;
     width: 385px;
   }
 }
-/* line 51, sphere.scss */
+/* line 49, sphere.scss */
 .sphere--wrap {
   position: relative;
   width: 700px;
   height: 700px;
 }
 @media screen and (max-width: 1440px) {
-  /* line 51, sphere.scss */
+  /* line 49, sphere.scss */
   .sphere--wrap {
     height: 515px;
     width: 515px;
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 51, sphere.scss */
+  /* line 49, sphere.scss */
   .sphere--wrap {
     height: 385px;
     width: 385px;
   }
 }
-/* line 67, sphere.scss */
+/* line 65, sphere.scss */
 .sphere--next, .sphere--prev {
   cursor: pointer;
 }
-/* line 72, sphere.scss */
+/* line 70, sphere.scss */
 .sphere--item {
   position: absolute;
   top: 0;
@@ -82,17 +82,18 @@
   z-index: 1;
   opacity: 0;
 }
-/* line 80, sphere.scss */
+/* line 78, sphere.scss */
 .sphere--active {
   z-index: 3;
   opacity: 1;
 }
-/* line 85, sphere.scss */
+/* line 83, sphere.scss */
 .sphere--row {
+  display: -webkit-flex;
   display: flex;
 }
 
-/* line 90, sphere.scss */
+/* line 88, sphere.scss */
 .deactive {
   pointer-events: none;
 }
@@ -129,25 +130,33 @@
     left: -100%;
   }
 }
-/* line 115, sphere.scss */
+/* line 113, sphere.scss */
 .item-prev--out {
-  animation: itemPrevOut .03s;
+  -moz-animation: itemPrevOut 0.03s;
+  -webkit-animation: itemPrevOut 0.03s;
+  animation: itemPrevOut 0.03s;
 }
-/* line 119, sphere.scss */
+/* line 117, sphere.scss */
 .item-prev--in {
-  animation: itemPrevIn .03s;
+  -moz-animation: itemPrevIn 0.03s;
+  -webkit-animation: itemPrevIn 0.03s;
+  animation: itemPrevIn 0.03s;
 }
 
-/* line 125, sphere.scss */
+/* line 123, sphere.scss */
 .item-next--out {
-  animation: itemNextOut .03s;
+  -moz-animation: itemNextOut 0.03s;
+  -webkit-animation: itemNextOut 0.03s;
+  animation: itemNextOut 0.03s;
 }
-/* line 129, sphere.scss */
+/* line 127, sphere.scss */
 .item-next--in {
-  animation: itemNextIn .03s;
+  -moz-animation: itemNextIn 0.03s;
+  -webkit-animation: itemNextIn 0.03s;
+  animation: itemNextIn 0.03s;
 }
 
-/* line 134, sphere.scss */
+/* line 132, sphere.scss */
 .item {
   display: inline-block;
   height: 100px;
@@ -158,7 +167,7 @@
   width: 100px;
 }
 @media screen and (max-width: 1440px) {
-  /* line 134, sphere.scss */
+  /* line 132, sphere.scss */
   .item {
     height: calc(515px / 7);
     width: calc(515px / 7);
@@ -166,19 +175,21 @@
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 134, sphere.scss */
+  /* line 132, sphere.scss */
   .item {
     height: calc(385px / 7);
     width: calc(385px / 7);
     line-height: calc(385px / 7);
   }
 }
-/* line 155, sphere.scss */
+/* line 153, sphere.scss */
 .item:hover {
+  -moz-box-shadow: 0 0 1px 0 #000 inset;
+  -webkit-box-shadow: 0 0 1px 0 #000 inset;
   box-shadow: 0 0 1px 0 #000 inset;
   cursor: pointer;
 }
-/* line 160, sphere.scss */
+/* line 158, sphere.scss */
 .item img {
   width: 100%;
   height: 100%;
@@ -188,723 +199,1125 @@
   bottom: 0;
 }
 
-/* line 174, sphere.scss */
+/* line 172, sphere.scss */
 .sphere--item-2, .sphere--item-6 {
   z-index: 1;
 }
-/* line 179, sphere.scss */
+/* line 177, sphere.scss */
 .sphere--item-3, .sphere--item-5 {
   z-index: 2;
 }
-/* line 184, sphere.scss */
+/* line 182, sphere.scss */
 .sphere--item-4 {
   z-index: 3;
 }
 
 /* row 4 */
-/* line 196, sphere.scss */
+/* line 194, sphere.scss */
 .sphere--row-1 .sphere--item-1 {
+  -moz-transform: translate(12px, 2px) scale(0.5, 0.5) perspective(250px) rotateX(-52deg) rotateY(31deg) rotateZ(18deg);
+  -ms-transform: translate(12px, 2px) scale(0.5, 0.5) perspective(250px) rotateX(-52deg) rotateY(31deg) rotateZ(18deg);
+  -webkit-transform: translate(12px, 2px) scale(0.5, 0.5) perspective(250px) rotateX(-52deg) rotateY(31deg) rotateZ(18deg);
   transform: translate(12px, 2px) scale(0.5, 0.5) perspective(250px) rotateX(-52deg) rotateY(31deg) rotateZ(18deg);
 }
-/* line 200, sphere.scss */
+/* line 198, sphere.scss */
 .sphere--row-1 .sphere--item-2 {
+  -moz-transform: translate(12px, 2px) scale(0.5, 0.5) perspective(250px) rotateX(-52deg) rotateY(31deg) rotateZ(18deg);
+  -ms-transform: translate(12px, 2px) scale(0.5, 0.5) perspective(250px) rotateX(-52deg) rotateY(31deg) rotateZ(18deg);
+  -webkit-transform: translate(12px, 2px) scale(0.5, 0.5) perspective(250px) rotateX(-52deg) rotateY(31deg) rotateZ(18deg);
   transform: translate(12px, 2px) scale(0.5, 0.5) perspective(250px) rotateX(-52deg) rotateY(31deg) rotateZ(18deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 200, sphere.scss */
+  /* line 198, sphere.scss */
   .sphere--row-1 .sphere--item-2 {
+    -moz-transform: translate(12px, 4px) scale(0.5, 0.5) perspective(250px) rotateX(-52deg) rotateY(31deg) rotateZ(18deg);
+    -ms-transform: translate(12px, 4px) scale(0.5, 0.5) perspective(250px) rotateX(-52deg) rotateY(31deg) rotateZ(18deg);
+    -webkit-transform: translate(12px, 4px) scale(0.5, 0.5) perspective(250px) rotateX(-52deg) rotateY(31deg) rotateZ(18deg);
     transform: translate(12px, 4px) scale(0.5, 0.5) perspective(250px) rotateX(-52deg) rotateY(31deg) rotateZ(18deg);
   }
 }
-/* line 208, sphere.scss */
+/* line 206, sphere.scss */
 .sphere--row-1 .sphere--item-3 {
+  -moz-transform: translate(-13px, -17px) scale(1.85, 0.45) perspective(1000px) rotateX(-46deg) rotateY(53deg) rotateZ(5deg);
+  -ms-transform: translate(-13px, -17px) scale(1.85, 0.45) perspective(1000px) rotateX(-46deg) rotateY(53deg) rotateZ(5deg);
+  -webkit-transform: translate(-13px, -17px) scale(1.85, 0.45) perspective(1000px) rotateX(-46deg) rotateY(53deg) rotateZ(5deg);
   transform: translate(-13px, -17px) scale(1.85, 0.45) perspective(1000px) rotateX(-46deg) rotateY(53deg) rotateZ(5deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 208, sphere.scss */
+  /* line 206, sphere.scss */
   .sphere--row-1 .sphere--item-3 {
+    -moz-transform: translate(-6px, -13px) scale(1.85, 0.45) perspective(1000px) rotateX(-46deg) rotateY(53deg) rotateZ(5deg);
+    -ms-transform: translate(-6px, -13px) scale(1.85, 0.45) perspective(1000px) rotateX(-46deg) rotateY(53deg) rotateZ(5deg);
+    -webkit-transform: translate(-6px, -13px) scale(1.85, 0.45) perspective(1000px) rotateX(-46deg) rotateY(53deg) rotateZ(5deg);
     transform: translate(-6px, -13px) scale(1.85, 0.45) perspective(1000px) rotateX(-46deg) rotateY(53deg) rotateZ(5deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 208, sphere.scss */
+  /* line 206, sphere.scss */
   .sphere--row-1 .sphere--item-3 {
+    -moz-transform: translate(-5px, -10px) scale(1.85, 0.45) perspective(1000px) rotateX(-46deg) rotateY(53deg) rotateZ(5deg);
+    -ms-transform: translate(-5px, -10px) scale(1.85, 0.45) perspective(1000px) rotateX(-46deg) rotateY(53deg) rotateZ(5deg);
+    -webkit-transform: translate(-5px, -10px) scale(1.85, 0.45) perspective(1000px) rotateX(-46deg) rotateY(53deg) rotateZ(5deg);
     transform: translate(-5px, -10px) scale(1.85, 0.45) perspective(1000px) rotateX(-46deg) rotateY(53deg) rotateZ(5deg);
   }
 }
-/* line 219, sphere.scss */
+/* line 217, sphere.scss */
 .sphere--row-1 .sphere--item-4 {
+  -moz-transform: translateY(-34px) perspective(250px) rotateX(62deg) scale(1.1, 0.8);
+  -ms-transform: translateY(-34px) perspective(250px) rotateX(62deg) scale(1.1, 0.8);
+  -webkit-transform: translateY(-34px) perspective(250px) rotateX(62deg) scale(1.1, 0.8);
   transform: translateY(-34px) perspective(250px) rotateX(62deg) scale(1.1, 0.8);
 }
 @media screen and (max-width: 1440px) {
-  /* line 219, sphere.scss */
+  /* line 217, sphere.scss */
   .sphere--row-1 .sphere--item-4 {
+    -moz-transform: translateY(-24px) perspective(250px) rotateX(62deg) scale(1.1, 0.8);
+    -ms-transform: translateY(-24px) perspective(250px) rotateX(62deg) scale(1.1, 0.8);
+    -webkit-transform: translateY(-24px) perspective(250px) rotateX(62deg) scale(1.1, 0.8);
     transform: translateY(-24px) perspective(250px) rotateX(62deg) scale(1.1, 0.8);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 219, sphere.scss */
+  /* line 217, sphere.scss */
   .sphere--row-1 .sphere--item-4 {
+    -moz-transform: translateY(-17px) perspective(250px) rotateX(62deg) scale(1.1, 0.8);
+    -ms-transform: translateY(-17px) perspective(250px) rotateX(62deg) scale(1.1, 0.8);
+    -webkit-transform: translateY(-17px) perspective(250px) rotateX(62deg) scale(1.1, 0.8);
     transform: translateY(-17px) perspective(250px) rotateX(62deg) scale(1.1, 0.8);
   }
 }
-/* line 230, sphere.scss */
+/* line 228, sphere.scss */
 .sphere--row-1 .sphere--item-5 {
+  -moz-transform: translate(14px, -22px) scale3d(1.8, 0.5, 1) perspective(1350px) rotateX(-36deg) rotateY(-50deg) rotateZ(-5deg);
+  -ms-transform: translate(14px, -22px) scale3d(1.8, 0.5, 1) perspective(1350px) rotateX(-36deg) rotateY(-50deg) rotateZ(-5deg);
+  -webkit-transform: translate(14px, -22px) scale3d(1.8, 0.5, 1) perspective(1350px) rotateX(-36deg) rotateY(-50deg) rotateZ(-5deg);
   transform: translate(14px, -22px) scale3d(1.8, 0.5, 1) perspective(1350px) rotateX(-36deg) rotateY(-50deg) rotateZ(-5deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 230, sphere.scss */
+  /* line 228, sphere.scss */
   .sphere--row-1 .sphere--item-5 {
+    -moz-transform: translate(7px, -16px) scale3d(1.8, 0.5, 1) perspective(1350px) rotateX(-36deg) rotateY(-50deg) rotateZ(-5deg);
+    -ms-transform: translate(7px, -16px) scale3d(1.8, 0.5, 1) perspective(1350px) rotateX(-36deg) rotateY(-50deg) rotateZ(-5deg);
+    -webkit-transform: translate(7px, -16px) scale3d(1.8, 0.5, 1) perspective(1350px) rotateX(-36deg) rotateY(-50deg) rotateZ(-5deg);
     transform: translate(7px, -16px) scale3d(1.8, 0.5, 1) perspective(1350px) rotateX(-36deg) rotateY(-50deg) rotateZ(-5deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 230, sphere.scss */
+  /* line 228, sphere.scss */
   .sphere--row-1 .sphere--item-5 {
+    -moz-transform: translate(4px, -12px) scale3d(1.8, 0.5, 1) perspective(1350px) rotateX(-36deg) rotateY(-50deg) rotateZ(-5deg);
+    -ms-transform: translate(4px, -12px) scale3d(1.8, 0.5, 1) perspective(1350px) rotateX(-36deg) rotateY(-50deg) rotateZ(-5deg);
+    -webkit-transform: translate(4px, -12px) scale3d(1.8, 0.5, 1) perspective(1350px) rotateX(-36deg) rotateY(-50deg) rotateZ(-5deg);
     transform: translate(4px, -12px) scale3d(1.8, 0.5, 1) perspective(1350px) rotateX(-36deg) rotateY(-50deg) rotateZ(-5deg);
   }
 }
-/* line 241, sphere.scss */
+/* line 239, sphere.scss */
 .sphere--row-1 .sphere--item-6 {
+  -moz-transform: translate(0px, -4px) scale3d(0.5, 0.5, 1) perspective(1050px) rotateX(31deg) rotateY(35deg) rotateZ(7deg);
+  -ms-transform: translate(0px, -4px) scale3d(0.5, 0.5, 1) perspective(1050px) rotateX(31deg) rotateY(35deg) rotateZ(7deg);
+  -webkit-transform: translate(0px, -4px) scale3d(0.5, 0.5, 1) perspective(1050px) rotateX(31deg) rotateY(35deg) rotateZ(7deg);
   transform: translate(0px, -4px) scale3d(0.5, 0.5, 1) perspective(1050px) rotateX(31deg) rotateY(35deg) rotateZ(7deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 241, sphere.scss */
+  /* line 239, sphere.scss */
   .sphere--row-1 .sphere--item-6 {
+    -moz-transform: translate(-6px, -4px) scale3d(0.5, 0.5, 1) perspective(1050px) rotateX(31deg) rotateY(35deg) rotateZ(7deg);
+    -ms-transform: translate(-6px, -4px) scale3d(0.5, 0.5, 1) perspective(1050px) rotateX(31deg) rotateY(35deg) rotateZ(7deg);
+    -webkit-transform: translate(-6px, -4px) scale3d(0.5, 0.5, 1) perspective(1050px) rotateX(31deg) rotateY(35deg) rotateZ(7deg);
     transform: translate(-6px, -4px) scale3d(0.5, 0.5, 1) perspective(1050px) rotateX(31deg) rotateY(35deg) rotateZ(7deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 241, sphere.scss */
+  /* line 239, sphere.scss */
   .sphere--row-1 .sphere--item-6 {
+    -moz-transform: translate(-7px, -4px) scale3d(0.5, 0.5, 1) perspective(1050px) rotateX(31deg) rotateY(35deg) rotateZ(7deg);
+    -ms-transform: translate(-7px, -4px) scale3d(0.5, 0.5, 1) perspective(1050px) rotateX(31deg) rotateY(35deg) rotateZ(7deg);
+    -webkit-transform: translate(-7px, -4px) scale3d(0.5, 0.5, 1) perspective(1050px) rotateX(31deg) rotateY(35deg) rotateZ(7deg);
     transform: translate(-7px, -4px) scale3d(0.5, 0.5, 1) perspective(1050px) rotateX(31deg) rotateY(35deg) rotateZ(7deg);
   }
 }
-/* line 252, sphere.scss */
+/* line 250, sphere.scss */
 .sphere--row-1 .sphere--item-7 {
+  -moz-transform: translateX(32px) perspective(350px) rotateY(63deg) scale(0.8, 1.1);
+  -ms-transform: translateX(32px) perspective(350px) rotateY(63deg) scale(0.8, 1.1);
+  -webkit-transform: translateX(32px) perspective(350px) rotateY(63deg) scale(0.8, 1.1);
   transform: translateX(32px) perspective(350px) rotateY(63deg) scale(0.8, 1.1);
 }
-/* line 260, sphere.scss */
+/* line 258, sphere.scss */
 .sphere--row-7 .sphere--item-1 {
+  -moz-transform: translate(12px, -2px) scale(0.5, 0.5) perspective(250px) rotateX(52deg) rotateY(31deg) rotateZ(-18deg);
+  -ms-transform: translate(12px, -2px) scale(0.5, 0.5) perspective(250px) rotateX(52deg) rotateY(31deg) rotateZ(-18deg);
+  -webkit-transform: translate(12px, -2px) scale(0.5, 0.5) perspective(250px) rotateX(52deg) rotateY(31deg) rotateZ(-18deg);
   transform: translate(12px, -2px) scale(0.5, 0.5) perspective(250px) rotateX(52deg) rotateY(31deg) rotateZ(-18deg);
 }
-/* line 263, sphere.scss */
+/* line 261, sphere.scss */
 .sphere--row-7 .sphere--item-2 {
+  -moz-transform: translate(12px, -2px) scale(0.5, 0.5) perspective(250px) rotateX(52deg) rotateY(31deg) rotateZ(-18deg);
+  -ms-transform: translate(12px, -2px) scale(0.5, 0.5) perspective(250px) rotateX(52deg) rotateY(31deg) rotateZ(-18deg);
+  -webkit-transform: translate(12px, -2px) scale(0.5, 0.5) perspective(250px) rotateX(52deg) rotateY(31deg) rotateZ(-18deg);
   transform: translate(12px, -2px) scale(0.5, 0.5) perspective(250px) rotateX(52deg) rotateY(31deg) rotateZ(-18deg);
 }
-/* line 266, sphere.scss */
+/* line 264, sphere.scss */
 .sphere--row-7 .sphere--item-3 {
+  -moz-transform: translate(-13px, 17px) scale(1.85, 0.45) perspective(1000px) rotateX(46deg) rotateY(53deg) rotateZ(-5deg);
+  -ms-transform: translate(-13px, 17px) scale(1.85, 0.45) perspective(1000px) rotateX(46deg) rotateY(53deg) rotateZ(-5deg);
+  -webkit-transform: translate(-13px, 17px) scale(1.85, 0.45) perspective(1000px) rotateX(46deg) rotateY(53deg) rotateZ(-5deg);
   transform: translate(-13px, 17px) scale(1.85, 0.45) perspective(1000px) rotateX(46deg) rotateY(53deg) rotateZ(-5deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 266, sphere.scss */
+  /* line 264, sphere.scss */
   .sphere--row-7 .sphere--item-3 {
+    -moz-transform: translate(-6px, 13px) scale(1.85, 0.45) perspective(1000px) rotateX(46deg) rotateY(53deg) rotateZ(-5deg);
+    -ms-transform: translate(-6px, 13px) scale(1.85, 0.45) perspective(1000px) rotateX(46deg) rotateY(53deg) rotateZ(-5deg);
+    -webkit-transform: translate(-6px, 13px) scale(1.85, 0.45) perspective(1000px) rotateX(46deg) rotateY(53deg) rotateZ(-5deg);
     transform: translate(-6px, 13px) scale(1.85, 0.45) perspective(1000px) rotateX(46deg) rotateY(53deg) rotateZ(-5deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 266, sphere.scss */
+  /* line 264, sphere.scss */
   .sphere--row-7 .sphere--item-3 {
+    -moz-transform: translate(-3px, 10px) scale(1.85, 0.45) perspective(1000px) rotateX(46deg) rotateY(53deg) rotateZ(-5deg);
+    -ms-transform: translate(-3px, 10px) scale(1.85, 0.45) perspective(1000px) rotateX(46deg) rotateY(53deg) rotateZ(-5deg);
+    -webkit-transform: translate(-3px, 10px) scale(1.85, 0.45) perspective(1000px) rotateX(46deg) rotateY(53deg) rotateZ(-5deg);
     transform: translate(-3px, 10px) scale(1.85, 0.45) perspective(1000px) rotateX(46deg) rotateY(53deg) rotateZ(-5deg);
   }
 }
-/* line 277, sphere.scss */
+/* line 275, sphere.scss */
 .sphere--row-7 .sphere--item-4 {
+  -moz-transform: translateY(34px) perspective(250px) rotateX(-62deg) scale(1.1, 0.8);
+  -ms-transform: translateY(34px) perspective(250px) rotateX(-62deg) scale(1.1, 0.8);
+  -webkit-transform: translateY(34px) perspective(250px) rotateX(-62deg) scale(1.1, 0.8);
   transform: translateY(34px) perspective(250px) rotateX(-62deg) scale(1.1, 0.8);
 }
 @media screen and (max-width: 1440px) {
-  /* line 277, sphere.scss */
+  /* line 275, sphere.scss */
   .sphere--row-7 .sphere--item-4 {
+    -moz-transform: translateY(24px) perspective(250px) rotateX(-62deg) scale(1.1, 0.8);
+    -ms-transform: translateY(24px) perspective(250px) rotateX(-62deg) scale(1.1, 0.8);
+    -webkit-transform: translateY(24px) perspective(250px) rotateX(-62deg) scale(1.1, 0.8);
     transform: translateY(24px) perspective(250px) rotateX(-62deg) scale(1.1, 0.8);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 277, sphere.scss */
+  /* line 275, sphere.scss */
   .sphere--row-7 .sphere--item-4 {
+    -moz-transform: translateY(17px) perspective(250px) rotateX(-62deg) scale(1.1, 0.8);
+    -ms-transform: translateY(17px) perspective(250px) rotateX(-62deg) scale(1.1, 0.8);
+    -webkit-transform: translateY(17px) perspective(250px) rotateX(-62deg) scale(1.1, 0.8);
     transform: translateY(17px) perspective(250px) rotateX(-62deg) scale(1.1, 0.8);
   }
 }
-/* line 288, sphere.scss */
+/* line 286, sphere.scss */
 .sphere--row-7 .sphere--item-5 {
+  -moz-transform: translate(14px, 22px) scale3d(1.8, 0.5, 1) perspective(1350px) rotateX(36deg) rotateY(-50deg) rotateZ(5deg);
+  -ms-transform: translate(14px, 22px) scale3d(1.8, 0.5, 1) perspective(1350px) rotateX(36deg) rotateY(-50deg) rotateZ(5deg);
+  -webkit-transform: translate(14px, 22px) scale3d(1.8, 0.5, 1) perspective(1350px) rotateX(36deg) rotateY(-50deg) rotateZ(5deg);
   transform: translate(14px, 22px) scale3d(1.8, 0.5, 1) perspective(1350px) rotateX(36deg) rotateY(-50deg) rotateZ(5deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 288, sphere.scss */
+  /* line 286, sphere.scss */
   .sphere--row-7 .sphere--item-5 {
+    -moz-transform: translate(8px, 17px) scale3d(1.8, 0.5, 1) perspective(1350px) rotateX(36deg) rotateY(-50deg) rotateZ(5deg);
+    -ms-transform: translate(8px, 17px) scale3d(1.8, 0.5, 1) perspective(1350px) rotateX(36deg) rotateY(-50deg) rotateZ(5deg);
+    -webkit-transform: translate(8px, 17px) scale3d(1.8, 0.5, 1) perspective(1350px) rotateX(36deg) rotateY(-50deg) rotateZ(5deg);
     transform: translate(8px, 17px) scale3d(1.8, 0.5, 1) perspective(1350px) rotateX(36deg) rotateY(-50deg) rotateZ(5deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 288, sphere.scss */
+  /* line 286, sphere.scss */
   .sphere--row-7 .sphere--item-5 {
+    -moz-transform: translate(7px, 12px) scale3d(1.8, 0.5, 1) perspective(1350px) rotateX(36deg) rotateY(-50deg) rotateZ(5deg);
+    -ms-transform: translate(7px, 12px) scale3d(1.8, 0.5, 1) perspective(1350px) rotateX(36deg) rotateY(-50deg) rotateZ(5deg);
+    -webkit-transform: translate(7px, 12px) scale3d(1.8, 0.5, 1) perspective(1350px) rotateX(36deg) rotateY(-50deg) rotateZ(5deg);
     transform: translate(7px, 12px) scale3d(1.8, 0.5, 1) perspective(1350px) rotateX(36deg) rotateY(-50deg) rotateZ(5deg);
   }
 }
-/* line 299, sphere.scss */
+/* line 297, sphere.scss */
 .sphere--row-7 .sphere--item-6 {
+  -moz-transform: translate(0px, 4px) scale3d(0.5, 0.5, 1) perspective(1050px) rotateX(-31deg) rotateY(35deg) rotateZ(-7deg);
+  -ms-transform: translate(0px, 4px) scale3d(0.5, 0.5, 1) perspective(1050px) rotateX(-31deg) rotateY(35deg) rotateZ(-7deg);
+  -webkit-transform: translate(0px, 4px) scale3d(0.5, 0.5, 1) perspective(1050px) rotateX(-31deg) rotateY(35deg) rotateZ(-7deg);
   transform: translate(0px, 4px) scale3d(0.5, 0.5, 1) perspective(1050px) rotateX(-31deg) rotateY(35deg) rotateZ(-7deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 299, sphere.scss */
+  /* line 297, sphere.scss */
   .sphere--row-7 .sphere--item-6 {
+    -moz-transform: translate(-3px, 3px) scale3d(0.5, 0.5, 1) perspective(1050px) rotateX(-31deg) rotateY(35deg) rotateZ(-7deg);
+    -ms-transform: translate(-3px, 3px) scale3d(0.5, 0.5, 1) perspective(1050px) rotateX(-31deg) rotateY(35deg) rotateZ(-7deg);
+    -webkit-transform: translate(-3px, 3px) scale3d(0.5, 0.5, 1) perspective(1050px) rotateX(-31deg) rotateY(35deg) rotateZ(-7deg);
     transform: translate(-3px, 3px) scale3d(0.5, 0.5, 1) perspective(1050px) rotateX(-31deg) rotateY(35deg) rotateZ(-7deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 299, sphere.scss */
+  /* line 297, sphere.scss */
   .sphere--row-7 .sphere--item-6 {
+    -moz-transform: translate(-1px, 2px) scale3d(0.5, 0.5, 1) perspective(1050px) rotateX(-31deg) rotateY(35deg) rotateZ(-7deg);
+    -ms-transform: translate(-1px, 2px) scale3d(0.5, 0.5, 1) perspective(1050px) rotateX(-31deg) rotateY(35deg) rotateZ(-7deg);
+    -webkit-transform: translate(-1px, 2px) scale3d(0.5, 0.5, 1) perspective(1050px) rotateX(-31deg) rotateY(35deg) rotateZ(-7deg);
     transform: translate(-1px, 2px) scale3d(0.5, 0.5, 1) perspective(1050px) rotateX(-31deg) rotateY(35deg) rotateZ(-7deg);
   }
 }
-/* line 310, sphere.scss */
+/* line 308, sphere.scss */
 .sphere--row-7 .sphere--item-7 {
+  -moz-transform: translateX(32px) perspective(350px) rotateY(63deg) scale(0.8, 1.1);
+  -ms-transform: translateX(32px) perspective(350px) rotateY(63deg) scale(0.8, 1.1);
+  -webkit-transform: translateX(32px) perspective(350px) rotateY(63deg) scale(0.8, 1.1);
   transform: translateX(32px) perspective(350px) rotateY(63deg) scale(0.8, 1.1);
 }
-/* line 318, sphere.scss */
+/* line 316, sphere.scss */
 .sphere--row-2 .sphere--item-1 {
+  -moz-transform: translate(4px, 6px) scale(0.5, 0.7) perspective(643px) rotateX(-43deg) rotateY(45deg) rotateZ(25deg);
+  -ms-transform: translate(4px, 6px) scale(0.5, 0.7) perspective(643px) rotateX(-43deg) rotateY(45deg) rotateZ(25deg);
+  -webkit-transform: translate(4px, 6px) scale(0.5, 0.7) perspective(643px) rotateX(-43deg) rotateY(45deg) rotateZ(25deg);
   transform: translate(4px, 6px) scale(0.5, 0.7) perspective(643px) rotateX(-43deg) rotateY(45deg) rotateZ(25deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 318, sphere.scss */
+  /* line 316, sphere.scss */
   .sphere--row-2 .sphere--item-1 {
+    -moz-transform: translate(8px, 6px) scale(0.5, 0.7) perspective(643px) rotateX(-43deg) rotateY(45deg) rotateZ(25deg);
+    -ms-transform: translate(8px, 6px) scale(0.5, 0.7) perspective(643px) rotateX(-43deg) rotateY(45deg) rotateZ(25deg);
+    -webkit-transform: translate(8px, 6px) scale(0.5, 0.7) perspective(643px) rotateX(-43deg) rotateY(45deg) rotateZ(25deg);
     transform: translate(8px, 6px) scale(0.5, 0.7) perspective(643px) rotateX(-43deg) rotateY(45deg) rotateZ(25deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 318, sphere.scss */
+  /* line 316, sphere.scss */
   .sphere--row-2 .sphere--item-1 {
+    -moz-transform: translate(7px, 6px) scale(0.5, 0.7) perspective(643px) rotateX(-43deg) rotateY(45deg) rotateZ(25deg);
+    -ms-transform: translate(7px, 6px) scale(0.5, 0.7) perspective(643px) rotateX(-43deg) rotateY(45deg) rotateZ(25deg);
+    -webkit-transform: translate(7px, 6px) scale(0.5, 0.7) perspective(643px) rotateX(-43deg) rotateY(45deg) rotateZ(25deg);
     transform: translate(7px, 6px) scale(0.5, 0.7) perspective(643px) rotateX(-43deg) rotateY(45deg) rotateZ(25deg);
   }
 }
-/* line 329, sphere.scss */
+/* line 327, sphere.scss */
 .sphere--row-2 .sphere--item-2 {
+  -moz-transform: translate(-32px, -33px) perspective(600px) scale(1.1, 1.07) rotateX(48deg) rotateY(-36deg) rotateZ(15deg);
+  -ms-transform: translate(-32px, -33px) perspective(600px) scale(1.1, 1.07) rotateX(48deg) rotateY(-36deg) rotateZ(15deg);
+  -webkit-transform: translate(-32px, -33px) perspective(600px) scale(1.1, 1.07) rotateX(48deg) rotateY(-36deg) rotateZ(15deg);
   transform: translate(-32px, -33px) perspective(600px) scale(1.1, 1.07) rotateX(48deg) rotateY(-36deg) rotateZ(15deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 329, sphere.scss */
+  /* line 327, sphere.scss */
   .sphere--row-2 .sphere--item-2 {
+    -moz-transform: translate(-20px, -23px) perspective(600px) scale(1.1, 1.07) rotateX(48deg) rotateY(-36deg) rotateZ(15deg);
+    -ms-transform: translate(-20px, -23px) perspective(600px) scale(1.1, 1.07) rotateX(48deg) rotateY(-36deg) rotateZ(15deg);
+    -webkit-transform: translate(-20px, -23px) perspective(600px) scale(1.1, 1.07) rotateX(48deg) rotateY(-36deg) rotateZ(15deg);
     transform: translate(-20px, -23px) perspective(600px) scale(1.1, 1.07) rotateX(48deg) rotateY(-36deg) rotateZ(15deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 329, sphere.scss */
+  /* line 327, sphere.scss */
   .sphere--row-2 .sphere--item-2 {
+    -moz-transform: translate(-14px, -20px) perspective(600px) scale(1.1, 1.07) rotateX(48deg) rotateY(-36deg) rotateZ(15deg);
+    -ms-transform: translate(-14px, -20px) perspective(600px) scale(1.1, 1.07) rotateX(48deg) rotateY(-36deg) rotateZ(15deg);
+    -webkit-transform: translate(-14px, -20px) perspective(600px) scale(1.1, 1.07) rotateX(48deg) rotateY(-36deg) rotateZ(15deg);
     transform: translate(-14px, -20px) perspective(600px) scale(1.1, 1.07) rotateX(48deg) rotateY(-36deg) rotateZ(15deg);
   }
 }
-/* line 340, sphere.scss */
+/* line 338, sphere.scss */
 .sphere--row-2 .sphere--item-3 {
+  -moz-transform: translate(-31px, -57px) perspective(400px) scale(1.4, 1) rotateX(33deg) rotateY(-34deg) rotateZ(7deg);
+  -ms-transform: translate(-31px, -57px) perspective(400px) scale(1.4, 1) rotateX(33deg) rotateY(-34deg) rotateZ(7deg);
+  -webkit-transform: translate(-31px, -57px) perspective(400px) scale(1.4, 1) rotateX(33deg) rotateY(-34deg) rotateZ(7deg);
   transform: translate(-31px, -57px) perspective(400px) scale(1.4, 1) rotateX(33deg) rotateY(-34deg) rotateZ(7deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 340, sphere.scss */
+  /* line 338, sphere.scss */
   .sphere--row-2 .sphere--item-3 {
+    -moz-transform: translate(-23px, -42px) perspective(400px) scale(1.4, 1) rotateX(33deg) rotateY(-34deg) rotateZ(7deg);
+    -ms-transform: translate(-23px, -42px) perspective(400px) scale(1.4, 1) rotateX(33deg) rotateY(-34deg) rotateZ(7deg);
+    -webkit-transform: translate(-23px, -42px) perspective(400px) scale(1.4, 1) rotateX(33deg) rotateY(-34deg) rotateZ(7deg);
     transform: translate(-23px, -42px) perspective(400px) scale(1.4, 1) rotateX(33deg) rotateY(-34deg) rotateZ(7deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 340, sphere.scss */
+  /* line 338, sphere.scss */
   .sphere--row-2 .sphere--item-3 {
+    -moz-transform: translate(-18px, -31px) perspective(200px) scale(1.4, 1) rotateX(29deg) rotateY(-34deg) rotateZ(7deg);
+    -ms-transform: translate(-18px, -31px) perspective(200px) scale(1.4, 1) rotateX(29deg) rotateY(-34deg) rotateZ(7deg);
+    -webkit-transform: translate(-18px, -31px) perspective(200px) scale(1.4, 1) rotateX(29deg) rotateY(-34deg) rotateZ(7deg);
     transform: translate(-18px, -31px) perspective(200px) scale(1.4, 1) rotateX(29deg) rotateY(-34deg) rotateZ(7deg);
   }
 }
-/* line 351, sphere.scss */
+/* line 349, sphere.scss */
 .sphere--row-2 .sphere--item-4 {
+  -moz-transform: translateY(-67px) perspective(750px) rotateX(36deg) scale(1.35, 1.15);
+  -ms-transform: translateY(-67px) perspective(750px) rotateX(36deg) scale(1.35, 1.15);
+  -webkit-transform: translateY(-67px) perspective(750px) rotateX(36deg) scale(1.35, 1.15);
   transform: translateY(-67px) perspective(750px) rotateX(36deg) scale(1.35, 1.15);
 }
 @media screen and (max-width: 1440px) {
-  /* line 351, sphere.scss */
+  /* line 349, sphere.scss */
   .sphere--row-2 .sphere--item-4 {
+    -moz-transform: translateY(-49px) perspective(750px) rotateX(36deg) scale(1.35, 1.15);
+    -ms-transform: translateY(-49px) perspective(750px) rotateX(36deg) scale(1.35, 1.15);
+    -webkit-transform: translateY(-49px) perspective(750px) rotateX(36deg) scale(1.35, 1.15);
     transform: translateY(-49px) perspective(750px) rotateX(36deg) scale(1.35, 1.15);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 351, sphere.scss */
+  /* line 349, sphere.scss */
   .sphere--row-2 .sphere--item-4 {
+    -moz-transform: translateY(-36px) perspective(750px) rotateX(36deg) scale(1.35, 1.15);
+    -ms-transform: translateY(-36px) perspective(750px) rotateX(36deg) scale(1.35, 1.15);
+    -webkit-transform: translateY(-36px) perspective(750px) rotateX(36deg) scale(1.35, 1.15);
     transform: translateY(-36px) perspective(750px) rotateX(36deg) scale(1.35, 1.15);
   }
 }
-/* line 362, sphere.scss */
+/* line 360, sphere.scss */
 .sphere--row-2 .sphere--item-5 {
+  -moz-transform: translate(32px, -58px) scale(1.39, 1.05) perspective(400px) rotateX(34deg) rotateY(30deg) rotateZ(-7deg);
+  -ms-transform: translate(32px, -58px) scale(1.39, 1.05) perspective(400px) rotateX(34deg) rotateY(30deg) rotateZ(-7deg);
+  -webkit-transform: translate(32px, -58px) scale(1.39, 1.05) perspective(400px) rotateX(34deg) rotateY(30deg) rotateZ(-7deg);
   transform: translate(32px, -58px) scale(1.39, 1.05) perspective(400px) rotateX(34deg) rotateY(30deg) rotateZ(-7deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 362, sphere.scss */
+  /* line 360, sphere.scss */
   .sphere--row-2 .sphere--item-5 {
+    -moz-transform: translate(23px, -42px) scale(1.39, 1.05) perspective(400px) rotateX(34deg) rotateY(30deg) rotateZ(-7deg);
+    -ms-transform: translate(23px, -42px) scale(1.39, 1.05) perspective(400px) rotateX(34deg) rotateY(30deg) rotateZ(-7deg);
+    -webkit-transform: translate(23px, -42px) scale(1.39, 1.05) perspective(400px) rotateX(34deg) rotateY(30deg) rotateZ(-7deg);
     transform: translate(23px, -42px) scale(1.39, 1.05) perspective(400px) rotateX(34deg) rotateY(30deg) rotateZ(-7deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 362, sphere.scss */
+  /* line 360, sphere.scss */
   .sphere--row-2 .sphere--item-5 {
+    -moz-transform: translate(17px, -31px) scale(1.39, 1.05) perspective(400px) rotateX(34deg) rotateY(30deg) rotateZ(-7deg);
+    -ms-transform: translate(17px, -31px) scale(1.39, 1.05) perspective(400px) rotateX(34deg) rotateY(30deg) rotateZ(-7deg);
+    -webkit-transform: translate(17px, -31px) scale(1.39, 1.05) perspective(400px) rotateX(34deg) rotateY(30deg) rotateZ(-7deg);
     transform: translate(17px, -31px) scale(1.39, 1.05) perspective(400px) rotateX(34deg) rotateY(30deg) rotateZ(-7deg);
   }
 }
-/* line 373, sphere.scss */
+/* line 371, sphere.scss */
 .sphere--row-2 .sphere--item-6 {
+  -moz-transform: translate(35px, -31px) scale(1.3, 1.1) perspective(1100px) rotateX(49deg) rotateY(44deg) rotateZ(-17deg);
+  -ms-transform: translate(35px, -31px) scale(1.3, 1.1) perspective(1100px) rotateX(49deg) rotateY(44deg) rotateZ(-17deg);
+  -webkit-transform: translate(35px, -31px) scale(1.3, 1.1) perspective(1100px) rotateX(49deg) rotateY(44deg) rotateZ(-17deg);
   transform: translate(35px, -31px) scale(1.3, 1.1) perspective(1100px) rotateX(49deg) rotateY(44deg) rotateZ(-17deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 373, sphere.scss */
+  /* line 371, sphere.scss */
   .sphere--row-2 .sphere--item-6 {
+    -moz-transform: translate(24px, -23px) scale(1.3, 1.1) perspective(1100px) rotateX(49deg) rotateY(44deg) rotateZ(-17deg);
+    -ms-transform: translate(24px, -23px) scale(1.3, 1.1) perspective(1100px) rotateX(49deg) rotateY(44deg) rotateZ(-17deg);
+    -webkit-transform: translate(24px, -23px) scale(1.3, 1.1) perspective(1100px) rotateX(49deg) rotateY(44deg) rotateZ(-17deg);
     transform: translate(24px, -23px) scale(1.3, 1.1) perspective(1100px) rotateX(49deg) rotateY(44deg) rotateZ(-17deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 373, sphere.scss */
+  /* line 371, sphere.scss */
   .sphere--row-2 .sphere--item-6 {
+    -moz-transform: translate(17px, -17px) scale(1.3, 1.1) perspective(1100px) rotateX(49deg) rotateY(44deg) rotateZ(-17deg);
+    -ms-transform: translate(17px, -17px) scale(1.3, 1.1) perspective(1100px) rotateX(49deg) rotateY(44deg) rotateZ(-17deg);
+    -webkit-transform: translate(17px, -17px) scale(1.3, 1.1) perspective(1100px) rotateX(49deg) rotateY(44deg) rotateZ(-17deg);
     transform: translate(17px, -17px) scale(1.3, 1.1) perspective(1100px) rotateX(49deg) rotateY(44deg) rotateZ(-17deg);
   }
 }
-/* line 384, sphere.scss */
+/* line 382, sphere.scss */
 .sphere--row-2 .sphere--item-7 {
+  -moz-transform: translate(-7px, 13px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(76deg) rotateY(59deg) rotateZ(-48deg);
+  -ms-transform: translate(-7px, 13px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(76deg) rotateY(59deg) rotateZ(-48deg);
+  -webkit-transform: translate(-7px, 13px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(76deg) rotateY(59deg) rotateZ(-48deg);
   transform: translate(-7px, 13px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(76deg) rotateY(59deg) rotateZ(-48deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 384, sphere.scss */
+  /* line 382, sphere.scss */
   .sphere--row-2 .sphere--item-7 {
+    -moz-transform: translate(-3px, 13px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(76deg) rotateY(59deg) rotateZ(-48deg);
+    -ms-transform: translate(-3px, 13px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(76deg) rotateY(59deg) rotateZ(-48deg);
+    -webkit-transform: translate(-3px, 13px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(76deg) rotateY(59deg) rotateZ(-48deg);
     transform: translate(-3px, 13px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(76deg) rotateY(59deg) rotateZ(-48deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 384, sphere.scss */
+  /* line 382, sphere.scss */
   .sphere--row-2 .sphere--item-7 {
+    -moz-transform: translate(-3px, 10px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(76deg) rotateY(59deg) rotateZ(-48deg);
+    -ms-transform: translate(-3px, 10px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(76deg) rotateY(59deg) rotateZ(-48deg);
+    -webkit-transform: translate(-3px, 10px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(76deg) rotateY(59deg) rotateZ(-48deg);
     transform: translate(-3px, 10px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(76deg) rotateY(59deg) rotateZ(-48deg);
   }
 }
-/* line 400, sphere.scss */
+/* line 398, sphere.scss */
 .sphere--row-6 .sphere--item-1 {
+  -moz-transform: translate(4px, -6px) scale(0.5, 0.7) perspective(643px) rotateX(43deg) rotateY(45deg) rotateZ(-25deg);
+  -ms-transform: translate(4px, -6px) scale(0.5, 0.7) perspective(643px) rotateX(43deg) rotateY(45deg) rotateZ(-25deg);
+  -webkit-transform: translate(4px, -6px) scale(0.5, 0.7) perspective(643px) rotateX(43deg) rotateY(45deg) rotateZ(-25deg);
   transform: translate(4px, -6px) scale(0.5, 0.7) perspective(643px) rotateX(43deg) rotateY(45deg) rotateZ(-25deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 400, sphere.scss */
+  /* line 398, sphere.scss */
   .sphere--row-6 .sphere--item-1 {
+    -moz-transform: translate(6px, 0px) scale(0.5, 0.7) perspective(643px) rotateX(43deg) rotateY(45deg) rotateZ(-25deg);
+    -ms-transform: translate(6px, 0px) scale(0.5, 0.7) perspective(643px) rotateX(43deg) rotateY(45deg) rotateZ(-25deg);
+    -webkit-transform: translate(6px, 0px) scale(0.5, 0.7) perspective(643px) rotateX(43deg) rotateY(45deg) rotateZ(-25deg);
     transform: translate(6px, 0px) scale(0.5, 0.7) perspective(643px) rotateX(43deg) rotateY(45deg) rotateZ(-25deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 400, sphere.scss */
+  /* line 398, sphere.scss */
   .sphere--row-6 .sphere--item-1 {
+    -moz-transform: translate(9px, 2px) scale(0.5, 0.7) perspective(643px) rotateX(43deg) rotateY(45deg) rotateZ(-25deg);
+    -ms-transform: translate(9px, 2px) scale(0.5, 0.7) perspective(643px) rotateX(43deg) rotateY(45deg) rotateZ(-25deg);
+    -webkit-transform: translate(9px, 2px) scale(0.5, 0.7) perspective(643px) rotateX(43deg) rotateY(45deg) rotateZ(-25deg);
     transform: translate(9px, 2px) scale(0.5, 0.7) perspective(643px) rotateX(43deg) rotateY(45deg) rotateZ(-25deg);
   }
 }
-/* line 411, sphere.scss */
+/* line 409, sphere.scss */
 .sphere--row-6 .sphere--item-2 {
+  -moz-transform: translate(-32px, 33px) perspective(600px) scale(1.1, 1.07) rotateX(-48deg) rotateY(-36deg) rotateZ(-15deg);
+  -ms-transform: translate(-32px, 33px) perspective(600px) scale(1.1, 1.07) rotateX(-48deg) rotateY(-36deg) rotateZ(-15deg);
+  -webkit-transform: translate(-32px, 33px) perspective(600px) scale(1.1, 1.07) rotateX(-48deg) rotateY(-36deg) rotateZ(-15deg);
   transform: translate(-32px, 33px) perspective(600px) scale(1.1, 1.07) rotateX(-48deg) rotateY(-36deg) rotateZ(-15deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 411, sphere.scss */
+  /* line 409, sphere.scss */
   .sphere--row-6 .sphere--item-2 {
+    -moz-transform: translate(-21px, 24px) perspective(600px) scale(1.1, 1.07) rotateX(-48deg) rotateY(-36deg) rotateZ(-15deg);
+    -ms-transform: translate(-21px, 24px) perspective(600px) scale(1.1, 1.07) rotateX(-48deg) rotateY(-36deg) rotateZ(-15deg);
+    -webkit-transform: translate(-21px, 24px) perspective(600px) scale(1.1, 1.07) rotateX(-48deg) rotateY(-36deg) rotateZ(-15deg);
     transform: translate(-21px, 24px) perspective(600px) scale(1.1, 1.07) rotateX(-48deg) rotateY(-36deg) rotateZ(-15deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 411, sphere.scss */
+  /* line 409, sphere.scss */
   .sphere--row-6 .sphere--item-2 {
+    -moz-transform: translate(-13px, 17px) perspective(600px) scale(1.1, 1.07) rotateX(-48deg) rotateY(-36deg) rotateZ(-15deg);
+    -ms-transform: translate(-13px, 17px) perspective(600px) scale(1.1, 1.07) rotateX(-48deg) rotateY(-36deg) rotateZ(-15deg);
+    -webkit-transform: translate(-13px, 17px) perspective(600px) scale(1.1, 1.07) rotateX(-48deg) rotateY(-36deg) rotateZ(-15deg);
     transform: translate(-13px, 17px) perspective(600px) scale(1.1, 1.07) rotateX(-48deg) rotateY(-36deg) rotateZ(-15deg);
   }
 }
-/* line 422, sphere.scss */
+/* line 420, sphere.scss */
 .sphere--row-6 .sphere--item-3 {
+  -moz-transform: translate(-31px, 57px) perspective(400px) scale(1.4, 1) rotateX(-33deg) rotateY(-34deg) rotateZ(-7deg);
+  -ms-transform: translate(-31px, 57px) perspective(400px) scale(1.4, 1) rotateX(-33deg) rotateY(-34deg) rotateZ(-7deg);
+  -webkit-transform: translate(-31px, 57px) perspective(400px) scale(1.4, 1) rotateX(-33deg) rotateY(-34deg) rotateZ(-7deg);
   transform: translate(-31px, 57px) perspective(400px) scale(1.4, 1) rotateX(-33deg) rotateY(-34deg) rotateZ(-7deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 422, sphere.scss */
+  /* line 420, sphere.scss */
   .sphere--row-6 .sphere--item-3 {
+    -moz-transform: translate(-20px, 42px) perspective(400px) scale(1.4, 1) rotateX(-33deg) rotateY(-34deg) rotateZ(-7deg);
+    -ms-transform: translate(-20px, 42px) perspective(400px) scale(1.4, 1) rotateX(-33deg) rotateY(-34deg) rotateZ(-7deg);
+    -webkit-transform: translate(-20px, 42px) perspective(400px) scale(1.4, 1) rotateX(-33deg) rotateY(-34deg) rotateZ(-7deg);
     transform: translate(-20px, 42px) perspective(400px) scale(1.4, 1) rotateX(-33deg) rotateY(-34deg) rotateZ(-7deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 422, sphere.scss */
+  /* line 420, sphere.scss */
   .sphere--row-6 .sphere--item-3 {
+    -moz-transform: translate(-16px, 31px) perspective(400px) scale(1.4, 1) rotateX(-33deg) rotateY(-34deg) rotateZ(-7deg);
+    -ms-transform: translate(-16px, 31px) perspective(400px) scale(1.4, 1) rotateX(-33deg) rotateY(-34deg) rotateZ(-7deg);
+    -webkit-transform: translate(-16px, 31px) perspective(400px) scale(1.4, 1) rotateX(-33deg) rotateY(-34deg) rotateZ(-7deg);
     transform: translate(-16px, 31px) perspective(400px) scale(1.4, 1) rotateX(-33deg) rotateY(-34deg) rotateZ(-7deg);
   }
 }
-/* line 433, sphere.scss */
+/* line 431, sphere.scss */
 .sphere--row-6 .sphere--item-4 {
+  -moz-transform: translateY(67px) perspective(750px) rotateX(-36deg) scale(1.35, 1.15);
+  -ms-transform: translateY(67px) perspective(750px) rotateX(-36deg) scale(1.35, 1.15);
+  -webkit-transform: translateY(67px) perspective(750px) rotateX(-36deg) scale(1.35, 1.15);
   transform: translateY(67px) perspective(750px) rotateX(-36deg) scale(1.35, 1.15);
 }
 @media screen and (max-width: 1440px) {
-  /* line 433, sphere.scss */
+  /* line 431, sphere.scss */
   .sphere--row-6 .sphere--item-4 {
+    -moz-transform: translateY(49px) perspective(750px) rotateX(-36deg) scale(1.35, 1.15);
+    -ms-transform: translateY(49px) perspective(750px) rotateX(-36deg) scale(1.35, 1.15);
+    -webkit-transform: translateY(49px) perspective(750px) rotateX(-36deg) scale(1.35, 1.15);
     transform: translateY(49px) perspective(750px) rotateX(-36deg) scale(1.35, 1.15);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 433, sphere.scss */
+  /* line 431, sphere.scss */
   .sphere--row-6 .sphere--item-4 {
+    -moz-transform: translateY(36px) perspective(750px) rotateX(-36deg) scale(1.35, 1.15);
+    -ms-transform: translateY(36px) perspective(750px) rotateX(-36deg) scale(1.35, 1.15);
+    -webkit-transform: translateY(36px) perspective(750px) rotateX(-36deg) scale(1.35, 1.15);
     transform: translateY(36px) perspective(750px) rotateX(-36deg) scale(1.35, 1.15);
   }
 }
-/* line 444, sphere.scss */
+/* line 442, sphere.scss */
 .sphere--row-6 .sphere--item-5 {
+  -moz-transform: translate(32px, 58px) scale(1.39, 1.05) perspective(400px) rotateX(-34deg) rotateY(30deg) rotateZ(7deg);
+  -ms-transform: translate(32px, 58px) scale(1.39, 1.05) perspective(400px) rotateX(-34deg) rotateY(30deg) rotateZ(7deg);
+  -webkit-transform: translate(32px, 58px) scale(1.39, 1.05) perspective(400px) rotateX(-34deg) rotateY(30deg) rotateZ(7deg);
   transform: translate(32px, 58px) scale(1.39, 1.05) perspective(400px) rotateX(-34deg) rotateY(30deg) rotateZ(7deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 444, sphere.scss */
+  /* line 442, sphere.scss */
   .sphere--row-6 .sphere--item-5 {
+    -moz-transform: translate(22px, 43px) scale(1.39, 1.05) perspective(400px) rotateX(-34deg) rotateY(30deg) rotateZ(7deg);
+    -ms-transform: translate(22px, 43px) scale(1.39, 1.05) perspective(400px) rotateX(-34deg) rotateY(30deg) rotateZ(7deg);
+    -webkit-transform: translate(22px, 43px) scale(1.39, 1.05) perspective(400px) rotateX(-34deg) rotateY(30deg) rotateZ(7deg);
     transform: translate(22px, 43px) scale(1.39, 1.05) perspective(400px) rotateX(-34deg) rotateY(30deg) rotateZ(7deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 444, sphere.scss */
+  /* line 442, sphere.scss */
   .sphere--row-6 .sphere--item-5 {
+    -moz-transform: translate(15px, 31px) scale(1.39, 1.05) perspective(400px) rotateX(-34deg) rotateY(30deg) rotateZ(7deg);
+    -ms-transform: translate(15px, 31px) scale(1.39, 1.05) perspective(400px) rotateX(-34deg) rotateY(30deg) rotateZ(7deg);
+    -webkit-transform: translate(15px, 31px) scale(1.39, 1.05) perspective(400px) rotateX(-34deg) rotateY(30deg) rotateZ(7deg);
     transform: translate(15px, 31px) scale(1.39, 1.05) perspective(400px) rotateX(-34deg) rotateY(30deg) rotateZ(7deg);
   }
 }
-/* line 455, sphere.scss */
+/* line 453, sphere.scss */
 .sphere--row-6 .sphere--item-6 {
+  -moz-transform: translate(35px, 31px) scale(1.3, 1.1) perspective(1100px) rotateX(-49deg) rotateY(44deg) rotateZ(17deg);
+  -ms-transform: translate(35px, 31px) scale(1.3, 1.1) perspective(1100px) rotateX(-49deg) rotateY(44deg) rotateZ(17deg);
+  -webkit-transform: translate(35px, 31px) scale(1.3, 1.1) perspective(1100px) rotateX(-49deg) rotateY(44deg) rotateZ(17deg);
   transform: translate(35px, 31px) scale(1.3, 1.1) perspective(1100px) rotateX(-49deg) rotateY(44deg) rotateZ(17deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 455, sphere.scss */
+  /* line 453, sphere.scss */
   .sphere--row-6 .sphere--item-6 {
+    -moz-transform: translate(21px, 24px) scale(1.3, 1.1) perspective(1100px) rotateX(-49deg) rotateY(44deg) rotateZ(17deg);
+    -ms-transform: translate(21px, 24px) scale(1.3, 1.1) perspective(1100px) rotateX(-49deg) rotateY(44deg) rotateZ(17deg);
+    -webkit-transform: translate(21px, 24px) scale(1.3, 1.1) perspective(1100px) rotateX(-49deg) rotateY(44deg) rotateZ(17deg);
     transform: translate(21px, 24px) scale(1.3, 1.1) perspective(1100px) rotateX(-49deg) rotateY(44deg) rotateZ(17deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 455, sphere.scss */
+  /* line 453, sphere.scss */
   .sphere--row-6 .sphere--item-6 {
+    -moz-transform: translate(15px, 17px) scale(1.3, 1.1) perspective(1100px) rotateX(-49deg) rotateY(44deg) rotateZ(17deg);
+    -ms-transform: translate(15px, 17px) scale(1.3, 1.1) perspective(1100px) rotateX(-49deg) rotateY(44deg) rotateZ(17deg);
+    -webkit-transform: translate(15px, 17px) scale(1.3, 1.1) perspective(1100px) rotateX(-49deg) rotateY(44deg) rotateZ(17deg);
     transform: translate(15px, 17px) scale(1.3, 1.1) perspective(1100px) rotateX(-49deg) rotateY(44deg) rotateZ(17deg);
   }
 }
-/* line 466, sphere.scss */
+/* line 464, sphere.scss */
 .sphere--row-6 .sphere--item-7 {
+  -moz-transform: translate(-7px, -16px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(-76deg) rotateY(59deg) rotateZ(48deg);
+  -ms-transform: translate(-7px, -16px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(-76deg) rotateY(59deg) rotateZ(48deg);
+  -webkit-transform: translate(-7px, -16px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(-76deg) rotateY(59deg) rotateZ(48deg);
   transform: translate(-7px, -16px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(-76deg) rotateY(59deg) rotateZ(48deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 466, sphere.scss */
+  /* line 464, sphere.scss */
   .sphere--row-6 .sphere--item-7 {
+    -moz-transform: translate(-6px, -11px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(-76deg) rotateY(59deg) rotateZ(48deg);
+    -ms-transform: translate(-6px, -11px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(-76deg) rotateY(59deg) rotateZ(48deg);
+    -webkit-transform: translate(-6px, -11px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(-76deg) rotateY(59deg) rotateZ(48deg);
     transform: translate(-6px, -11px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(-76deg) rotateY(59deg) rotateZ(48deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 466, sphere.scss */
+  /* line 464, sphere.scss */
   .sphere--row-6 .sphere--item-7 {
+    -moz-transform: translate(-4px, -10px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(-50deg) rotateY(59deg) rotateZ(31deg);
+    -ms-transform: translate(-4px, -10px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(-50deg) rotateY(59deg) rotateZ(31deg);
+    -webkit-transform: translate(-4px, -10px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(-50deg) rotateY(59deg) rotateZ(31deg);
     transform: translate(-4px, -10px) scale3d(0.5, 0.5, 1) perspective(200px) rotateX(-50deg) rotateY(59deg) rotateZ(31deg);
   }
 }
-/* line 482, sphere.scss */
+/* line 480, sphere.scss */
 .sphere--row-3 .sphere--item-1 {
+  -moz-transform: translate(-27px, -10px) perspective(2000px) scale(0.7, 1.38) rotateX(48deg) rotateY(-36deg) rotateZ(25deg);
+  -ms-transform: translate(-27px, -10px) perspective(2000px) scale(0.7, 1.38) rotateX(48deg) rotateY(-36deg) rotateZ(25deg);
+  -webkit-transform: translate(-27px, -10px) perspective(2000px) scale(0.7, 1.38) rotateX(48deg) rotateY(-36deg) rotateZ(25deg);
   transform: translate(-27px, -10px) perspective(2000px) scale(0.7, 1.38) rotateX(48deg) rotateY(-36deg) rotateZ(25deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 482, sphere.scss */
+  /* line 480, sphere.scss */
   .sphere--row-3 .sphere--item-1 {
+    -moz-transform: translate(-17px, -7px) perspective(2000px) scale(0.7, 1.38) rotateX(48deg) rotateY(-36deg) rotateZ(25deg);
+    -ms-transform: translate(-17px, -7px) perspective(2000px) scale(0.7, 1.38) rotateX(48deg) rotateY(-36deg) rotateZ(25deg);
+    -webkit-transform: translate(-17px, -7px) perspective(2000px) scale(0.7, 1.38) rotateX(48deg) rotateY(-36deg) rotateZ(25deg);
     transform: translate(-17px, -7px) perspective(2000px) scale(0.7, 1.38) rotateX(48deg) rotateY(-36deg) rotateZ(25deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 482, sphere.scss */
+  /* line 480, sphere.scss */
   .sphere--row-3 .sphere--item-1 {
+    -moz-transform: translate(-13px, -5px) perspective(2000px) scale(0.7, 1.38) rotateX(48deg) rotateY(-36deg) rotateZ(25deg);
+    -ms-transform: translate(-13px, -5px) perspective(2000px) scale(0.7, 1.38) rotateX(48deg) rotateY(-36deg) rotateZ(25deg);
+    -webkit-transform: translate(-13px, -5px) perspective(2000px) scale(0.7, 1.38) rotateX(48deg) rotateY(-36deg) rotateZ(25deg);
     transform: translate(-13px, -5px) perspective(2000px) scale(0.7, 1.38) rotateX(48deg) rotateY(-36deg) rotateZ(25deg);
   }
 }
-/* line 493, sphere.scss */
+/* line 491, sphere.scss */
 .sphere--row-3 .sphere--item-2 {
+  -moz-transform: translate(-58px, -31px) perspective(400px) scale(1.1, 1.47) rotateX(41deg) rotateY(-32deg) rotateZ(15deg);
+  -ms-transform: translate(-58px, -31px) perspective(400px) scale(1.1, 1.47) rotateX(41deg) rotateY(-32deg) rotateZ(15deg);
+  -webkit-transform: translate(-58px, -31px) perspective(400px) scale(1.1, 1.47) rotateX(41deg) rotateY(-32deg) rotateZ(15deg);
   transform: translate(-58px, -31px) perspective(400px) scale(1.1, 1.47) rotateX(41deg) rotateY(-32deg) rotateZ(15deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 493, sphere.scss */
+  /* line 491, sphere.scss */
   .sphere--row-3 .sphere--item-2 {
+    -moz-transform: translate(-40px, -22px) perspective(400px) scale(1.1, 1.47) rotateX(41deg) rotateY(-32deg) rotateZ(16deg);
+    -ms-transform: translate(-40px, -22px) perspective(400px) scale(1.1, 1.47) rotateX(41deg) rotateY(-32deg) rotateZ(16deg);
+    -webkit-transform: translate(-40px, -22px) perspective(400px) scale(1.1, 1.47) rotateX(41deg) rotateY(-32deg) rotateZ(16deg);
     transform: translate(-40px, -22px) perspective(400px) scale(1.1, 1.47) rotateX(41deg) rotateY(-32deg) rotateZ(16deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 493, sphere.scss */
+  /* line 491, sphere.scss */
   .sphere--row-3 .sphere--item-2 {
+    -moz-transform: translate(-29px, -19px) perspective(400px) scale(1.1, 1.47) rotateX(35deg) rotateY(-32deg) rotateZ(15deg);
+    -ms-transform: translate(-29px, -19px) perspective(400px) scale(1.1, 1.47) rotateX(35deg) rotateY(-32deg) rotateZ(15deg);
+    -webkit-transform: translate(-29px, -19px) perspective(400px) scale(1.1, 1.47) rotateX(35deg) rotateY(-32deg) rotateZ(15deg);
     transform: translate(-29px, -19px) perspective(400px) scale(1.1, 1.47) rotateX(35deg) rotateY(-32deg) rotateZ(15deg);
   }
 }
-/* line 504, sphere.scss */
+/* line 502, sphere.scss */
 .sphere--row-3 .sphere--item-3 {
+  -moz-transform: translate(-45px, -45px) perspective(400px) scale(1.4, 1.45) rotateX(25deg) rotateY(-20deg) rotateZ(5deg);
+  -ms-transform: translate(-45px, -45px) perspective(400px) scale(1.4, 1.45) rotateX(25deg) rotateY(-20deg) rotateZ(5deg);
+  -webkit-transform: translate(-45px, -45px) perspective(400px) scale(1.4, 1.45) rotateX(25deg) rotateY(-20deg) rotateZ(5deg);
   transform: translate(-45px, -45px) perspective(400px) scale(1.4, 1.45) rotateX(25deg) rotateY(-20deg) rotateZ(5deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 504, sphere.scss */
+  /* line 502, sphere.scss */
   .sphere--row-3 .sphere--item-3 {
+    -moz-transform: translate(-31px, -33px) perspective(400px) scale(1.4, 1.45) rotateX(25deg) rotateY(-20deg) rotateZ(5deg);
+    -ms-transform: translate(-31px, -33px) perspective(400px) scale(1.4, 1.45) rotateX(25deg) rotateY(-20deg) rotateZ(5deg);
+    -webkit-transform: translate(-31px, -33px) perspective(400px) scale(1.4, 1.45) rotateX(25deg) rotateY(-20deg) rotateZ(5deg);
     transform: translate(-31px, -33px) perspective(400px) scale(1.4, 1.45) rotateX(25deg) rotateY(-20deg) rotateZ(5deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 504, sphere.scss */
+  /* line 502, sphere.scss */
   .sphere--row-3 .sphere--item-3 {
+    -moz-transform: translate(-24px, -24px) perspective(400px) scale(1.4, 1.45) rotateX(25deg) rotateY(-20deg) rotateZ(5deg);
+    -ms-transform: translate(-24px, -24px) perspective(400px) scale(1.4, 1.45) rotateX(25deg) rotateY(-20deg) rotateZ(5deg);
+    -webkit-transform: translate(-24px, -24px) perspective(400px) scale(1.4, 1.45) rotateX(25deg) rotateY(-20deg) rotateZ(5deg);
     transform: translate(-24px, -24px) perspective(400px) scale(1.4, 1.45) rotateX(25deg) rotateY(-20deg) rotateZ(5deg);
   }
 }
-/* line 515, sphere.scss */
+/* line 513, sphere.scss */
 .sphere--row-3 .sphere--item-4 {
+  -moz-transform: translateY(-50px) perspective(1000px) rotateX(22.5deg) scale(1.5, 1.5);
+  -ms-transform: translateY(-50px) perspective(1000px) rotateX(22.5deg) scale(1.5, 1.5);
+  -webkit-transform: translateY(-50px) perspective(1000px) rotateX(22.5deg) scale(1.5, 1.5);
   transform: translateY(-50px) perspective(1000px) rotateX(22.5deg) scale(1.5, 1.5);
 }
 @media screen and (max-width: 1440px) {
-  /* line 515, sphere.scss */
+  /* line 513, sphere.scss */
   .sphere--row-3 .sphere--item-4 {
+    -moz-transform: translateY(-36px) perspective(1000px) rotateX(22.5deg) scale(1.5, 1.5);
+    -ms-transform: translateY(-36px) perspective(1000px) rotateX(22.5deg) scale(1.5, 1.5);
+    -webkit-transform: translateY(-36px) perspective(1000px) rotateX(22.5deg) scale(1.5, 1.5);
     transform: translateY(-36px) perspective(1000px) rotateX(22.5deg) scale(1.5, 1.5);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 515, sphere.scss */
+  /* line 513, sphere.scss */
   .sphere--row-3 .sphere--item-4 {
+    -moz-transform: translateY(-27px) perspective(1000px) rotateX(22.5deg) scale(1.5, 1.5);
+    -ms-transform: translateY(-27px) perspective(1000px) rotateX(22.5deg) scale(1.5, 1.5);
+    -webkit-transform: translateY(-27px) perspective(1000px) rotateX(22.5deg) scale(1.5, 1.5);
     transform: translateY(-27px) perspective(1000px) rotateX(22.5deg) scale(1.5, 1.5);
   }
 }
-/* line 526, sphere.scss */
+/* line 524, sphere.scss */
 .sphere--row-3 .sphere--item-5 {
+  -moz-transform: translate(45px, -45px) scale(1.4, 1.45) perspective(500px) rotateX(25deg) rotateY(20deg) rotateZ(-4deg);
+  -ms-transform: translate(45px, -45px) scale(1.4, 1.45) perspective(500px) rotateX(25deg) rotateY(20deg) rotateZ(-4deg);
+  -webkit-transform: translate(45px, -45px) scale(1.4, 1.45) perspective(500px) rotateX(25deg) rotateY(20deg) rotateZ(-4deg);
   transform: translate(45px, -45px) scale(1.4, 1.45) perspective(500px) rotateX(25deg) rotateY(20deg) rotateZ(-4deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 526, sphere.scss */
+  /* line 524, sphere.scss */
   .sphere--row-3 .sphere--item-5 {
+    -moz-transform: translate(33px, -32px) scale(1.4, 1.45) perspective(500px) rotateX(25deg) rotateY(20deg) rotateZ(-4deg);
+    -ms-transform: translate(33px, -32px) scale(1.4, 1.45) perspective(500px) rotateX(25deg) rotateY(20deg) rotateZ(-4deg);
+    -webkit-transform: translate(33px, -32px) scale(1.4, 1.45) perspective(500px) rotateX(25deg) rotateY(20deg) rotateZ(-4deg);
     transform: translate(33px, -32px) scale(1.4, 1.45) perspective(500px) rotateX(25deg) rotateY(20deg) rotateZ(-4deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 526, sphere.scss */
+  /* line 524, sphere.scss */
   .sphere--row-3 .sphere--item-5 {
+    -moz-transform: translate(24px, -24px) scale(1.4, 1.45) perspective(500px) rotateX(25deg) rotateY(20deg) rotateZ(-4deg);
+    -ms-transform: translate(24px, -24px) scale(1.4, 1.45) perspective(500px) rotateX(25deg) rotateY(20deg) rotateZ(-4deg);
+    -webkit-transform: translate(24px, -24px) scale(1.4, 1.45) perspective(500px) rotateX(25deg) rotateY(20deg) rotateZ(-4deg);
     transform: translate(24px, -24px) scale(1.4, 1.45) perspective(500px) rotateX(25deg) rotateY(20deg) rotateZ(-4deg);
   }
 }
-/* line 537, sphere.scss */
+/* line 535, sphere.scss */
 .sphere--row-3 .sphere--item-6 {
+  -moz-transform: translate(58px, -30px) scale(1.12, 1.4) perspective(414px) rotateX(36deg) rotateY(35deg) rotateZ(-12deg);
+  -ms-transform: translate(58px, -30px) scale(1.12, 1.4) perspective(414px) rotateX(36deg) rotateY(35deg) rotateZ(-12deg);
+  -webkit-transform: translate(58px, -30px) scale(1.12, 1.4) perspective(414px) rotateX(36deg) rotateY(35deg) rotateZ(-12deg);
   transform: translate(58px, -30px) scale(1.12, 1.4) perspective(414px) rotateX(36deg) rotateY(35deg) rotateZ(-12deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 537, sphere.scss */
+  /* line 535, sphere.scss */
   .sphere--row-3 .sphere--item-6 {
+    -moz-transform: translate(42px, -21px) scale(1.12, 1.4) perspective(414px) rotateX(36deg) rotateY(35deg) rotateZ(-12deg);
+    -ms-transform: translate(42px, -21px) scale(1.12, 1.4) perspective(414px) rotateX(36deg) rotateY(35deg) rotateZ(-12deg);
+    -webkit-transform: translate(42px, -21px) scale(1.12, 1.4) perspective(414px) rotateX(36deg) rotateY(35deg) rotateZ(-12deg);
     transform: translate(42px, -21px) scale(1.12, 1.4) perspective(414px) rotateX(36deg) rotateY(35deg) rotateZ(-12deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 537, sphere.scss */
+  /* line 535, sphere.scss */
   .sphere--row-3 .sphere--item-6 {
+    -moz-transform: translate(31px, -15px) scale(1.12, 1.4) perspective(414px) rotateX(34deg) rotateY(35deg) rotateZ(-10deg);
+    -ms-transform: translate(31px, -15px) scale(1.12, 1.4) perspective(414px) rotateX(34deg) rotateY(35deg) rotateZ(-10deg);
+    -webkit-transform: translate(31px, -15px) scale(1.12, 1.4) perspective(414px) rotateX(34deg) rotateY(35deg) rotateZ(-10deg);
     transform: translate(31px, -15px) scale(1.12, 1.4) perspective(414px) rotateX(34deg) rotateY(35deg) rotateZ(-10deg);
   }
 }
-/* line 548, sphere.scss */
+/* line 546, sphere.scss */
 .sphere--row-3 .sphere--item-7 {
+  -moz-transform: translate(21px, -10px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(56deg) rotateY(36deg) rotateZ(-37deg);
+  -ms-transform: translate(21px, -10px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(56deg) rotateY(36deg) rotateZ(-37deg);
+  -webkit-transform: translate(21px, -10px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(56deg) rotateY(36deg) rotateZ(-37deg);
   transform: translate(21px, -10px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(56deg) rotateY(36deg) rotateZ(-37deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 548, sphere.scss */
+  /* line 546, sphere.scss */
   .sphere--row-3 .sphere--item-7 {
+    -moz-transform: translate(13px, -9px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(56deg) rotateY(36deg) rotateZ(-37deg);
+    -ms-transform: translate(13px, -9px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(56deg) rotateY(36deg) rotateZ(-37deg);
+    -webkit-transform: translate(13px, -9px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(56deg) rotateY(36deg) rotateZ(-37deg);
     transform: translate(13px, -9px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(56deg) rotateY(36deg) rotateZ(-37deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 548, sphere.scss */
+  /* line 546, sphere.scss */
   .sphere--row-3 .sphere--item-7 {
+    -moz-transform: translate(9px, -6px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(56deg) rotateY(36deg) rotateZ(-37deg);
+    -ms-transform: translate(9px, -6px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(56deg) rotateY(36deg) rotateZ(-37deg);
+    -webkit-transform: translate(9px, -6px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(56deg) rotateY(36deg) rotateZ(-37deg);
     transform: translate(9px, -6px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(56deg) rotateY(36deg) rotateZ(-37deg);
   }
 }
-/* line 564, sphere.scss */
+/* line 562, sphere.scss */
 .sphere--row-5 .sphere--item-1 {
+  -moz-transform: translate(-27px, 10px) perspective(2000px) scale(0.7, 1.38) rotateX(-48deg) rotateY(-36deg) rotateZ(-25deg);
+  -ms-transform: translate(-27px, 10px) perspective(2000px) scale(0.7, 1.38) rotateX(-48deg) rotateY(-36deg) rotateZ(-25deg);
+  -webkit-transform: translate(-27px, 10px) perspective(2000px) scale(0.7, 1.38) rotateX(-48deg) rotateY(-36deg) rotateZ(-25deg);
   transform: translate(-27px, 10px) perspective(2000px) scale(0.7, 1.38) rotateX(-48deg) rotateY(-36deg) rotateZ(-25deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 564, sphere.scss */
+  /* line 562, sphere.scss */
   .sphere--row-5 .sphere--item-1 {
+    -moz-transform: translate(-18px, 7px) perspective(2000px) scale(0.7, 1.38) rotateX(-48deg) rotateY(-36deg) rotateZ(-25deg);
+    -ms-transform: translate(-18px, 7px) perspective(2000px) scale(0.7, 1.38) rotateX(-48deg) rotateY(-36deg) rotateZ(-25deg);
+    -webkit-transform: translate(-18px, 7px) perspective(2000px) scale(0.7, 1.38) rotateX(-48deg) rotateY(-36deg) rotateZ(-25deg);
     transform: translate(-18px, 7px) perspective(2000px) scale(0.7, 1.38) rotateX(-48deg) rotateY(-36deg) rotateZ(-25deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 564, sphere.scss */
+  /* line 562, sphere.scss */
   .sphere--row-5 .sphere--item-1 {
+    -moz-transform: translate(-13px, 7px) perspective(2000px) scale(0.7, 1.38) rotateX(-48deg) rotateY(-36deg) rotateZ(-25deg);
+    -ms-transform: translate(-13px, 7px) perspective(2000px) scale(0.7, 1.38) rotateX(-48deg) rotateY(-36deg) rotateZ(-25deg);
+    -webkit-transform: translate(-13px, 7px) perspective(2000px) scale(0.7, 1.38) rotateX(-48deg) rotateY(-36deg) rotateZ(-25deg);
     transform: translate(-13px, 7px) perspective(2000px) scale(0.7, 1.38) rotateX(-48deg) rotateY(-36deg) rotateZ(-25deg);
   }
 }
-/* line 574, sphere.scss */
+/* line 572, sphere.scss */
 .sphere--row-5 .sphere--item-2 {
+  -moz-transform: translate(-58px, 32px) perspective(400px) scale(1.1, 1.47) rotateX(-41deg) rotateY(-32deg) rotateZ(-15deg);
+  -ms-transform: translate(-58px, 32px) perspective(400px) scale(1.1, 1.47) rotateX(-41deg) rotateY(-32deg) rotateZ(-15deg);
+  -webkit-transform: translate(-58px, 32px) perspective(400px) scale(1.1, 1.47) rotateX(-41deg) rotateY(-32deg) rotateZ(-15deg);
   transform: translate(-58px, 32px) perspective(400px) scale(1.1, 1.47) rotateX(-41deg) rotateY(-32deg) rotateZ(-15deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 574, sphere.scss */
+  /* line 572, sphere.scss */
   .sphere--row-5 .sphere--item-2 {
+    -moz-transform: translate(-40px, 23px) perspective(400px) scale(1.1, 1.47) rotateX(-41deg) rotateY(-32deg) rotateZ(-15deg);
+    -ms-transform: translate(-40px, 23px) perspective(400px) scale(1.1, 1.47) rotateX(-41deg) rotateY(-32deg) rotateZ(-15deg);
+    -webkit-transform: translate(-40px, 23px) perspective(400px) scale(1.1, 1.47) rotateX(-41deg) rotateY(-32deg) rotateZ(-15deg);
     transform: translate(-40px, 23px) perspective(400px) scale(1.1, 1.47) rotateX(-41deg) rotateY(-32deg) rotateZ(-15deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 574, sphere.scss */
+  /* line 572, sphere.scss */
   .sphere--row-5 .sphere--item-2 {
+    -moz-transform: translate(-29px, 17px) perspective(400px) scale(1.1, 1.47) rotateX(-41deg) rotateY(-32deg) rotateZ(-15deg);
+    -ms-transform: translate(-29px, 17px) perspective(400px) scale(1.1, 1.47) rotateX(-41deg) rotateY(-32deg) rotateZ(-15deg);
+    -webkit-transform: translate(-29px, 17px) perspective(400px) scale(1.1, 1.47) rotateX(-41deg) rotateY(-32deg) rotateZ(-15deg);
     transform: translate(-29px, 17px) perspective(400px) scale(1.1, 1.47) rotateX(-41deg) rotateY(-32deg) rotateZ(-15deg);
   }
 }
-/* line 584, sphere.scss */
+/* line 582, sphere.scss */
 .sphere--row-5 .sphere--item-3 {
+  -moz-transform: translate(-45px, 47px) perspective(400px) scale(1.4, 1.45) rotateX(-25deg) rotateY(-20deg) rotateZ(-5deg);
+  -ms-transform: translate(-45px, 47px) perspective(400px) scale(1.4, 1.45) rotateX(-25deg) rotateY(-20deg) rotateZ(-5deg);
+  -webkit-transform: translate(-45px, 47px) perspective(400px) scale(1.4, 1.45) rotateX(-25deg) rotateY(-20deg) rotateZ(-5deg);
   transform: translate(-45px, 47px) perspective(400px) scale(1.4, 1.45) rotateX(-25deg) rotateY(-20deg) rotateZ(-5deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 584, sphere.scss */
+  /* line 582, sphere.scss */
   .sphere--row-5 .sphere--item-3 {
+    -moz-transform: translate(-32px, 33px) perspective(400px) scale(1.4, 1.45) rotateX(-25deg) rotateY(-20deg) rotateZ(-5deg);
+    -ms-transform: translate(-32px, 33px) perspective(400px) scale(1.4, 1.45) rotateX(-25deg) rotateY(-20deg) rotateZ(-5deg);
+    -webkit-transform: translate(-32px, 33px) perspective(400px) scale(1.4, 1.45) rotateX(-25deg) rotateY(-20deg) rotateZ(-5deg);
     transform: translate(-32px, 33px) perspective(400px) scale(1.4, 1.45) rotateX(-25deg) rotateY(-20deg) rotateZ(-5deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 584, sphere.scss */
+  /* line 582, sphere.scss */
   .sphere--row-5 .sphere--item-3 {
+    -moz-transform: translate(-24px, 25px) perspective(400px) scale(1.4, 1.45) rotateX(-25deg) rotateY(-20deg) rotateZ(-5deg);
+    -ms-transform: translate(-24px, 25px) perspective(400px) scale(1.4, 1.45) rotateX(-25deg) rotateY(-20deg) rotateZ(-5deg);
+    -webkit-transform: translate(-24px, 25px) perspective(400px) scale(1.4, 1.45) rotateX(-25deg) rotateY(-20deg) rotateZ(-5deg);
     transform: translate(-24px, 25px) perspective(400px) scale(1.4, 1.45) rotateX(-25deg) rotateY(-20deg) rotateZ(-5deg);
   }
 }
-/* line 594, sphere.scss */
+/* line 592, sphere.scss */
 .sphere--row-5 .sphere--item-4 {
+  -moz-transform: translateY(50px) perspective(1000px) rotateX(-22.5deg) scale(1.5, 1.5);
+  -ms-transform: translateY(50px) perspective(1000px) rotateX(-22.5deg) scale(1.5, 1.5);
+  -webkit-transform: translateY(50px) perspective(1000px) rotateX(-22.5deg) scale(1.5, 1.5);
   transform: translateY(50px) perspective(1000px) rotateX(-22.5deg) scale(1.5, 1.5);
 }
 @media screen and (max-width: 1440px) {
-  /* line 594, sphere.scss */
+  /* line 592, sphere.scss */
   .sphere--row-5 .sphere--item-4 {
+    -moz-transform: translateY(36px) perspective(1000px) rotateX(-22.5deg) scale(1.5, 1.5);
+    -ms-transform: translateY(36px) perspective(1000px) rotateX(-22.5deg) scale(1.5, 1.5);
+    -webkit-transform: translateY(36px) perspective(1000px) rotateX(-22.5deg) scale(1.5, 1.5);
     transform: translateY(36px) perspective(1000px) rotateX(-22.5deg) scale(1.5, 1.5);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 594, sphere.scss */
+  /* line 592, sphere.scss */
   .sphere--row-5 .sphere--item-4 {
+    -moz-transform: translateY(27px) perspective(1000px) rotateX(-22.5deg) scale(1.5, 1.5);
+    -ms-transform: translateY(27px) perspective(1000px) rotateX(-22.5deg) scale(1.5, 1.5);
+    -webkit-transform: translateY(27px) perspective(1000px) rotateX(-22.5deg) scale(1.5, 1.5);
     transform: translateY(27px) perspective(1000px) rotateX(-22.5deg) scale(1.5, 1.5);
   }
 }
-/* line 604, sphere.scss */
+/* line 602, sphere.scss */
 .sphere--row-5 .sphere--item-5 {
+  -moz-transform: translate(44px, 45px) scale(1.4, 1.45) perspective(500px) rotateX(-25deg) rotateY(20deg) rotateZ(4deg);
+  -ms-transform: translate(44px, 45px) scale(1.4, 1.45) perspective(500px) rotateX(-25deg) rotateY(20deg) rotateZ(4deg);
+  -webkit-transform: translate(44px, 45px) scale(1.4, 1.45) perspective(500px) rotateX(-25deg) rotateY(20deg) rotateZ(4deg);
   transform: translate(44px, 45px) scale(1.4, 1.45) perspective(500px) rotateX(-25deg) rotateY(20deg) rotateZ(4deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 604, sphere.scss */
+  /* line 602, sphere.scss */
   .sphere--row-5 .sphere--item-5 {
+    -moz-transform: translate(32px, 32px) scale(1.4, 1.45) perspective(500px) rotateX(-25deg) rotateY(20deg) rotateZ(4deg);
+    -ms-transform: translate(32px, 32px) scale(1.4, 1.45) perspective(500px) rotateX(-25deg) rotateY(20deg) rotateZ(4deg);
+    -webkit-transform: translate(32px, 32px) scale(1.4, 1.45) perspective(500px) rotateX(-25deg) rotateY(20deg) rotateZ(4deg);
     transform: translate(32px, 32px) scale(1.4, 1.45) perspective(500px) rotateX(-25deg) rotateY(20deg) rotateZ(4deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 604, sphere.scss */
+  /* line 602, sphere.scss */
   .sphere--row-5 .sphere--item-5 {
+    -moz-transform: translate(24px, 24px) scale(1.4, 1.45) perspective(500px) rotateX(-25deg) rotateY(20deg) rotateZ(4deg);
+    -ms-transform: translate(24px, 24px) scale(1.4, 1.45) perspective(500px) rotateX(-25deg) rotateY(20deg) rotateZ(4deg);
+    -webkit-transform: translate(24px, 24px) scale(1.4, 1.45) perspective(500px) rotateX(-25deg) rotateY(20deg) rotateZ(4deg);
     transform: translate(24px, 24px) scale(1.4, 1.45) perspective(500px) rotateX(-25deg) rotateY(20deg) rotateZ(4deg);
   }
 }
-/* line 614, sphere.scss */
+/* line 612, sphere.scss */
 .sphere--row-5 .sphere--item-6 {
+  -moz-transform: translate(57px, 31px) scale(1.12, 1.4) perspective(414px) rotateX(-36deg) rotateY(35deg) rotateZ(12deg);
+  -ms-transform: translate(57px, 31px) scale(1.12, 1.4) perspective(414px) rotateX(-36deg) rotateY(35deg) rotateZ(12deg);
+  -webkit-transform: translate(57px, 31px) scale(1.12, 1.4) perspective(414px) rotateX(-36deg) rotateY(35deg) rotateZ(12deg);
   transform: translate(57px, 31px) scale(1.12, 1.4) perspective(414px) rotateX(-36deg) rotateY(35deg) rotateZ(12deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 614, sphere.scss */
+  /* line 612, sphere.scss */
   .sphere--row-5 .sphere--item-6 {
+    -moz-transform: translate(41px, 21px) scale(1.12, 1.4) perspective(414px) rotateX(-36deg) rotateY(35deg) rotateZ(12deg);
+    -ms-transform: translate(41px, 21px) scale(1.12, 1.4) perspective(414px) rotateX(-36deg) rotateY(35deg) rotateZ(12deg);
+    -webkit-transform: translate(41px, 21px) scale(1.12, 1.4) perspective(414px) rotateX(-36deg) rotateY(35deg) rotateZ(12deg);
     transform: translate(41px, 21px) scale(1.12, 1.4) perspective(414px) rotateX(-36deg) rotateY(35deg) rotateZ(12deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 614, sphere.scss */
+  /* line 612, sphere.scss */
   .sphere--row-5 .sphere--item-6 {
+    -moz-transform: translate(30px, 16px) scale(1.12, 1.4) perspective(414px) rotateX(-36deg) rotateY(35deg) rotateZ(12deg);
+    -ms-transform: translate(30px, 16px) scale(1.12, 1.4) perspective(414px) rotateX(-36deg) rotateY(35deg) rotateZ(12deg);
+    -webkit-transform: translate(30px, 16px) scale(1.12, 1.4) perspective(414px) rotateX(-36deg) rotateY(35deg) rotateZ(12deg);
     transform: translate(30px, 16px) scale(1.12, 1.4) perspective(414px) rotateX(-36deg) rotateY(35deg) rotateZ(12deg);
   }
 }
-/* line 625, sphere.scss */
+/* line 623, sphere.scss */
 .sphere--row-5 .sphere--item-7 {
+  -moz-transform: translate(19px, 10px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(-62deg) rotateY(36deg) rotateZ(35deg);
+  -ms-transform: translate(19px, 10px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(-62deg) rotateY(36deg) rotateZ(35deg);
+  -webkit-transform: translate(19px, 10px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(-62deg) rotateY(36deg) rotateZ(35deg);
   transform: translate(19px, 10px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(-62deg) rotateY(36deg) rotateZ(35deg);
 }
 @media screen and (max-width: 1440px) {
-  /* line 625, sphere.scss */
+  /* line 623, sphere.scss */
   .sphere--row-5 .sphere--item-7 {
+    -moz-transform: translate(12px, 9px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(-62deg) rotateY(36deg) rotateZ(35deg);
+    -ms-transform: translate(12px, 9px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(-62deg) rotateY(36deg) rotateZ(35deg);
+    -webkit-transform: translate(12px, 9px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(-62deg) rotateY(36deg) rotateZ(35deg);
     transform: translate(12px, 9px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(-62deg) rotateY(36deg) rotateZ(35deg);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 625, sphere.scss */
+  /* line 623, sphere.scss */
   .sphere--row-5 .sphere--item-7 {
+    -moz-transform: translate(7px, 7px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(-62deg) rotateY(36deg) rotateZ(35deg);
+    -ms-transform: translate(7px, 7px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(-62deg) rotateY(36deg) rotateZ(35deg);
+    -webkit-transform: translate(7px, 7px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(-62deg) rotateY(36deg) rotateZ(35deg);
     transform: translate(7px, 7px) scale3d(0.5, 1.5, 1) perspective(250px) rotateX(-62deg) rotateY(36deg) rotateZ(35deg);
   }
 }
-/* line 641, sphere.scss */
+/* line 639, sphere.scss */
 .sphere--row-4 .sphere--item-1 {
+  -moz-transform: translateX(-32px) perspective(350px) rotateY(-63deg) scale(0.8, 1.1);
+  -ms-transform: translateX(-32px) perspective(350px) rotateY(-63deg) scale(0.8, 1.1);
+  -webkit-transform: translateX(-32px) perspective(350px) rotateY(-63deg) scale(0.8, 1.1);
   transform: translateX(-32px) perspective(350px) rotateY(-63deg) scale(0.8, 1.1);
 }
 @media screen and (max-width: 1440px) {
-  /* line 641, sphere.scss */
+  /* line 639, sphere.scss */
   .sphere--row-4 .sphere--item-1 {
+    -moz-transform: translateX(-22px) perspective(350px) rotateY(-63deg) scale(0.8, 1.1);
+    -ms-transform: translateX(-22px) perspective(350px) rotateY(-63deg) scale(0.8, 1.1);
+    -webkit-transform: translateX(-22px) perspective(350px) rotateY(-63deg) scale(0.8, 1.1);
     transform: translateX(-22px) perspective(350px) rotateY(-63deg) scale(0.8, 1.1);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 641, sphere.scss */
+  /* line 639, sphere.scss */
   .sphere--row-4 .sphere--item-1 {
+    -moz-transform: translateX(-17px) perspective(350px) rotateY(-63deg) scale(0.8, 1.1);
+    -ms-transform: translateX(-17px) perspective(350px) rotateY(-63deg) scale(0.8, 1.1);
+    -webkit-transform: translateX(-17px) perspective(350px) rotateY(-63deg) scale(0.8, 1.1);
     transform: translateX(-17px) perspective(350px) rotateY(-63deg) scale(0.8, 1.1);
   }
 }
-/* line 652, sphere.scss */
+/* line 650, sphere.scss */
 .sphere--row-4 .sphere--item-2 {
+  -moz-transform: translateX(-68px) perspective(200px) rotateY(-20deg) scale(1, 1.32);
+  -ms-transform: translateX(-68px) perspective(200px) rotateY(-20deg) scale(1, 1.32);
+  -webkit-transform: translateX(-68px) perspective(200px) rotateY(-20deg) scale(1, 1.32);
   transform: translateX(-68px) perspective(200px) rotateY(-20deg) scale(1, 1.32);
 }
 @media screen and (max-width: 1440px) {
-  /* line 652, sphere.scss */
+  /* line 650, sphere.scss */
   .sphere--row-4 .sphere--item-2 {
+    -moz-transform: translateX(-48px) perspective(200px) rotateY(-20deg) scale(1, 1.32);
+    -ms-transform: translateX(-48px) perspective(200px) rotateY(-20deg) scale(1, 1.32);
+    -webkit-transform: translateX(-48px) perspective(200px) rotateY(-20deg) scale(1, 1.32);
     transform: translateX(-48px) perspective(200px) rotateY(-20deg) scale(1, 1.32);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 652, sphere.scss */
+  /* line 650, sphere.scss */
   .sphere--row-4 .sphere--item-2 {
+    -moz-transform: translateX(-36px) perspective(200px) rotateY(-20deg) scale(1, 1.32);
+    -ms-transform: translateX(-36px) perspective(200px) rotateY(-20deg) scale(1, 1.32);
+    -webkit-transform: translateX(-36px) perspective(200px) rotateY(-20deg) scale(1, 1.32);
     transform: translateX(-36px) perspective(200px) rotateY(-20deg) scale(1, 1.32);
   }
 }
-/* line 663, sphere.scss */
+/* line 661, sphere.scss */
 .sphere--row-4 .sphere--item-3 {
+  -moz-transform: translateX(-50px) perspective(700px) rotateY(-25deg) scale(1.5);
+  -ms-transform: translateX(-50px) perspective(700px) rotateY(-25deg) scale(1.5);
+  -webkit-transform: translateX(-50px) perspective(700px) rotateY(-25deg) scale(1.5);
   transform: translateX(-50px) perspective(700px) rotateY(-25deg) scale(1.5);
 }
 @media screen and (max-width: 1440px) {
-  /* line 663, sphere.scss */
+  /* line 661, sphere.scss */
   .sphere--row-4 .sphere--item-3 {
+    -moz-transform: translateX(-36px) perspective(700px) rotateY(-25deg) scale(1.5);
+    -ms-transform: translateX(-36px) perspective(700px) rotateY(-25deg) scale(1.5);
+    -webkit-transform: translateX(-36px) perspective(700px) rotateY(-25deg) scale(1.5);
     transform: translateX(-36px) perspective(700px) rotateY(-25deg) scale(1.5);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 663, sphere.scss */
+  /* line 661, sphere.scss */
   .sphere--row-4 .sphere--item-3 {
+    -moz-transform: translateX(-27px) perspective(700px) rotateY(-25deg) scale(1.5);
+    -ms-transform: translateX(-27px) perspective(700px) rotateY(-25deg) scale(1.5);
+    -webkit-transform: translateX(-27px) perspective(700px) rotateY(-25deg) scale(1.5);
     transform: translateX(-27px) perspective(700px) rotateY(-25deg) scale(1.5);
   }
 }
-/* line 674, sphere.scss */
+/* line 672, sphere.scss */
 .sphere--row-4 .sphere--item-4 {
+  -moz-transform: scale(1.55);
+  -ms-transform: scale(1.55);
+  -webkit-transform: scale(1.55);
   transform: scale(1.55);
 }
-/* line 677, sphere.scss */
+/* line 675, sphere.scss */
 .sphere--row-4 .sphere--item-5 {
+  -moz-transform: translateX(50px) perspective(700px) rotateY(25deg) scale(1.5);
+  -ms-transform: translateX(50px) perspective(700px) rotateY(25deg) scale(1.5);
+  -webkit-transform: translateX(50px) perspective(700px) rotateY(25deg) scale(1.5);
   transform: translateX(50px) perspective(700px) rotateY(25deg) scale(1.5);
 }
 @media screen and (max-width: 1440px) {
-  /* line 677, sphere.scss */
+  /* line 675, sphere.scss */
   .sphere--row-4 .sphere--item-5 {
+    -moz-transform: translateX(36px) perspective(700px) rotateY(25deg) scale(1.5);
+    -ms-transform: translateX(36px) perspective(700px) rotateY(25deg) scale(1.5);
+    -webkit-transform: translateX(36px) perspective(700px) rotateY(25deg) scale(1.5);
     transform: translateX(36px) perspective(700px) rotateY(25deg) scale(1.5);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 677, sphere.scss */
+  /* line 675, sphere.scss */
   .sphere--row-4 .sphere--item-5 {
+    -moz-transform: translateX(27px) perspective(700px) rotateY(25deg) scale(1.5);
+    -ms-transform: translateX(27px) perspective(700px) rotateY(25deg) scale(1.5);
+    -webkit-transform: translateX(27px) perspective(700px) rotateY(25deg) scale(1.5);
     transform: translateX(27px) perspective(700px) rotateY(25deg) scale(1.5);
   }
 }
-/* line 688, sphere.scss */
+/* line 686, sphere.scss */
 .sphere--row-4 .sphere--item-6 {
+  -moz-transform: translateX(68px) perspective(200px) rotateY(20deg) scale(1, 1.32);
+  -ms-transform: translateX(68px) perspective(200px) rotateY(20deg) scale(1, 1.32);
+  -webkit-transform: translateX(68px) perspective(200px) rotateY(20deg) scale(1, 1.32);
   transform: translateX(68px) perspective(200px) rotateY(20deg) scale(1, 1.32);
 }
 @media screen and (max-width: 1440px) {
-  /* line 688, sphere.scss */
+  /* line 686, sphere.scss */
   .sphere--row-4 .sphere--item-6 {
+    -moz-transform: translateX(49px) perspective(200px) rotateY(20deg) scale(1, 1.32);
+    -ms-transform: translateX(49px) perspective(200px) rotateY(20deg) scale(1, 1.32);
+    -webkit-transform: translateX(49px) perspective(200px) rotateY(20deg) scale(1, 1.32);
     transform: translateX(49px) perspective(200px) rotateY(20deg) scale(1, 1.32);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 688, sphere.scss */
+  /* line 686, sphere.scss */
   .sphere--row-4 .sphere--item-6 {
+    -moz-transform: translateX(37px) perspective(200px) rotateY(20deg) scale(1, 1.32);
+    -ms-transform: translateX(37px) perspective(200px) rotateY(20deg) scale(1, 1.32);
+    -webkit-transform: translateX(37px) perspective(200px) rotateY(20deg) scale(1, 1.32);
     transform: translateX(37px) perspective(200px) rotateY(20deg) scale(1, 1.32);
   }
 }
-/* line 699, sphere.scss */
+/* line 697, sphere.scss */
 .sphere--row-4 .sphere--item-7 {
+  -moz-transform: translateX(32px) perspective(350px) rotateY(63deg) scale(0.8, 1.1);
+  -ms-transform: translateX(32px) perspective(350px) rotateY(63deg) scale(0.8, 1.1);
+  -webkit-transform: translateX(32px) perspective(350px) rotateY(63deg) scale(0.8, 1.1);
   transform: translateX(32px) perspective(350px) rotateY(63deg) scale(0.8, 1.1);
 }
 @media screen and (max-width: 1440px) {
-  /* line 699, sphere.scss */
+  /* line 697, sphere.scss */
   .sphere--row-4 .sphere--item-7 {
+    -moz-transform: translateX(26px) perspective(200px) rotateY(20deg) scale(0.8, 1.1);
+    -ms-transform: translateX(26px) perspective(200px) rotateY(20deg) scale(0.8, 1.1);
+    -webkit-transform: translateX(26px) perspective(200px) rotateY(20deg) scale(0.8, 1.1);
     transform: translateX(26px) perspective(200px) rotateY(20deg) scale(0.8, 1.1);
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 699, sphere.scss */
+  /* line 697, sphere.scss */
   .sphere--row-4 .sphere--item-7 {
+    -moz-transform: translateX(17px) perspective(200px) rotateY(20deg) scale(0.8, 1.1);
+    -ms-transform: translateX(17px) perspective(200px) rotateY(20deg) scale(0.8, 1.1);
+    -webkit-transform: translateX(17px) perspective(200px) rotateY(20deg) scale(0.8, 1.1);
     transform: translateX(17px) perspective(200px) rotateY(20deg) scale(0.8, 1.1);
   }
 }
